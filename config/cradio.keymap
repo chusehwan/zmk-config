@@ -11,6 +11,16 @@
 #define HRMR(k1,k2,k3,k4) &kp k1 &ht RALT k2 &ht RSHFT k3 &ht RCTRL k4
 
 / {
+    // 콤보 설정 추가
+    combos {
+        compatible = "zmk,combos";
+        combo_enter {
+            timeout-ms = <50>;          // 동시에 눌러야 하는 제한 시간 (ms)
+            key-positions = <23 24>;   // K와 L의 물리적 위치 번호
+            bindings = <&kp ENTER>;     // 실행할 키
+        };
+    };
+
     behaviors {
         ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
@@ -91,7 +101,7 @@
              &trans   &kp C_VOL_DN &kp C_MUTE &kp C_VOL_UP  &trans      &trans    &kp F7     &kp F8     &kp F9     &kp F11 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ alt + f4 │    f4    │     f5   │    f6    │    f10   │
-            &kp LCTRL  &kp LSHFT   &KP LALT  &trans      &trans       &kp LA(F4)    &kp F4     &kp F5     &kp F6     &kp F10
+            &kp LCTRL  &kp LSHFT   &kp LALT  &trans      &trans       &kp LA(F4)    &kp F4     &kp F5     &kp F6     &kp F10
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │   prev   │  stop    │  next    │          │   │          │    f1    │     f2   │    f3    │    f12   │
              &trans   &kp C_PREV  &kp C_PP  &kp C_NEXT    &trans         &trans    &kp F1     &kp F2     &kp F3     &kp F12
