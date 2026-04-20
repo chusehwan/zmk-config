@@ -39,10 +39,10 @@
     combos {
         compatible = "zmk,combos";
         
-        // K + L = ENTER
+        // s + d = ENTER
         combo_enter {
             timeout-ms = <50>;          // 동시에 눌러야 하는 제한 시간 (ms)
-            key-positions = <23 24>;   // K와 L의 물리적 위치 번호
+            key-positions = <6 7>;   // K와 L의 물리적 위치 번호
             bindings = <&kp ENTER>;     // 실행할 키
         };
 
@@ -60,17 +60,17 @@
             bindings = <&kp ESC>;
         }; 
         
-        // polars_colums
+        // polars_colums f + p  = pl.col('')
         combo_plcol {
             timeout-ms = <50>;
             key-positions = <8 17>; 
             bindings = <&pl_col>;   
         };
 
-        // polars_sort
+        // polars_sort f + a = pl.sort('')
         combo_plsort {
             timeout-ms = <50>;
-            key-positions = <25 5>; 
+            key-positions = <8 5>; 
             bindings = <&pl_col>;   
         };
                
@@ -102,6 +102,14 @@
             #binding-cells = <0>;
             tapping-term-ms = <250>;
             bindings = <&kp L>, <&kp RPAR>, <&kp RBKT>, <&kp LBRC>;
+        };
+
+        // L 탭 댄스: 1번 누르면 L, 2번 ,테스트용
+        l_par: l_parenthesis {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <250>;
+            bindings = <&kp E>, <&kp EQUAL>,  <&kp RPAR>, <&kp RBKT>;
         };
     };
 
@@ -136,7 +144,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │ DELETE   │ HOME     │   UP     │    END   │ INSERT   │
-            &trans    &trans     &trans     &trans      &trans          &kp DEL    &kp HOME    &kp UP     &kp END    &kp INS 
+            &trans    &kp LEFT     &trans     &kp RIGHT      &trans          &kp DEL    &kp HOME    &kp UP     &kp END    &kp INS 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ SCROL UP │ LEFT     │ DOWN     │ RIGHT    │  TAB     │
             &kp LCTRL  &kp LSHFT    &tog 5     &tog 4     &tog 6      &msc SCRL_UP &kp LEFT   &kp DOWN   &kp RIGHT   &kp TAB
@@ -156,7 +164,7 @@
              &trans    &trans     &trans     &trans     &trans          &trans    &kp N7     &kp N8     &kp N9     &trans 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │    4     │    5     │    6     │    0     │
-            &kp LCTRL  &kp LSHFT   &trans     &tog 3     &trans          &trans    &kp N4     &kp N5     &kp N6     &kp N0
+            &kp LCTRL  &kp LSHFT   &kp N5     &tog 3     &trans          &trans    &kp N4     &kp N5     &kp N6     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │    1     │    2     │    3     │          │
              &trans    &trans     &trans     &trans     &trans          &trans    &kp N1     &kp N2     &kp N3     &trans
@@ -186,14 +194,14 @@
         mouse_layer_4 {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │  L CLICK │    UP    │  R CLICK │          │
-             &trans    &trans     &trans     &trans     &trans           &trans   &mkp LCLK  &mmv MOVE_UP &mkp RCLK &trans 
+        //│ same like right     │          │          │          │   │          │  L CLICK │    UP    │  R CLICK │          │
+             &trans   &mkp LCLK  &mmv MOVE_UP &mkp RCLK &trans           &trans   &mkp LCLK  &mmv MOVE_UP &mkp RCLK &trans 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │  SCRL UP │    LEFT  │    DOWN  │   RIGHT  │          │
-             &trans    &trans     &trans     &trans     &trans        &msc SCRL_UP &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans
+             &msc SCRL_UP &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans        &msc SCRL_UP &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ SCRL DN  │ SCRL LEFT│          │SCRL RIGHT│          │
-             &trans    &trans     &trans     &trans     &trans        &msc SCRL_DOWN &msc SCRL_LEFT  &trans  &msc SCRL_RIGHT  &trans
+             &msc SCRL_DOWN &msc SCRL_LEFT  &trans  &msc SCRL_RIGHT  &trans        &msc SCRL_DOWN &msc SCRL_LEFT  &trans  &msc SCRL_RIGHT  &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &to 0       &to 0         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
