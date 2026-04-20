@@ -42,7 +42,7 @@
         // s + d = ENTER
         combo_enter {
             timeout-ms = <50>;          // 동시에 눌러야 하는 제한 시간 (ms)
-            key-positions = <6 7>;   // K와 L의 물리적 위치 번호
+            key-positions = <11 12>;   // K와 L의 물리적 위치 번호
             bindings = <&kp ENTER>;     // 실행할 키
         };
 
