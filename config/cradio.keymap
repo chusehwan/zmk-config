@@ -135,7 +135,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                              &mo 2      &kp V        &kp SPACE  &kp BSPC
+                                              &mo 1      &kp V        &kp SPACE  &kp BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
@@ -144,7 +144,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │ DELETE   │ HOME     │   UP     │    END   │ INSERT   │
-            &trans    &kp LEFT     &trans     &kp RIGHT      &trans          &kp DEL    &kp HOME    &kp UP     &kp END    &kp INS 
+            &trans    &kp LEFT     &trans     &kp RIGHT  &trans          &kp DEL    &kp HOME    &kp UP     &kp END    &kp INS 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ SCROL UP │ LEFT     │ DOWN     │ RIGHT    │  TAB     │
             &kp LCTRL  &kp LSHFT    &tog 5     &tog 4     &tog 6      &msc SCRL_UP &kp LEFT   &kp DOWN   &kp RIGHT   &kp TAB
