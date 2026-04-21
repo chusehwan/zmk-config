@@ -330,7 +330,7 @@
             bindings = <&kp B>, <&kp EXCL>;
         };
 
-   // 특수문자 : g, @
+         // 특수문자 : g, @
         g_golbange: g_golbange {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -338,101 +338,6 @@
             bindings = <&kp G>, <&kp AT>;
         };
 
-        // 특수문자 : s, #
-        s_sharp: s_sharp {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp S>, <&kp HASH>;
-        };
-
-        // 특수문자 : d, $
-        d_dollor: d_dollor {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp D>, <&kp DLLR>;
-        };
-
-        // 특수문자 : r, %
-        r_ratio: r_ratio {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp R>, <&kp PRCNT>;
-        };
-
-        // 특수문자 : v, ^
-        v_vvv: v_vvv {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp V>, <&kp CARET>;
-        };
-
-        // 특수문자 : n, &
-        n_nd: n_nd {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp N>, <&kp AMPS>;
-        };
-
-        // 특수문자 : a, *
-        a_aster: a_aster {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp A>, <&kp ASTRK>;
-        };
-
-        // 특수문자 : h, -
-        h_hyp: h_hyp {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp H>, <&kp MINUS>;
-        };
-
-        // 특수문자 : u, _
-        u_undrhyp: u_undrhyp {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp U>, <&kp UNDER>;
-        };
-
-        // 특수문자 : e, =
-        e_eql: e_eql {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp E>, <&kp EQUAL>;
-        };
-
-        // 특수문자 : p, +
-        p_plus: p_plus {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp P>, <&kp PLUS>;
-        };
-
-        // 특수문자 : b, \
-        b_slsh: b_slsh {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp B>, <&kp BSLH>;
-        };
-
-        // 특수문자 : o, |
-        o_or: o_or {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp O>, <&kp PIPE>;
-        };
     }; // behaviors 블록 전체 닫기
 
     keymap {
