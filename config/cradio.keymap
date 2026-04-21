@@ -346,12 +346,30 @@
             bindings = <&kp S>, <&kp HASH>;
         };
 
+        s_shft: s_shft {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            bindings = <&kp>, <&s_sharp>;
+        };
+
         // 특수문자 : d, $
         d_dollor: d_dollor {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp D>, <&kp DLLR>;
+        };
+
+        d_alt: d_alt {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            bindings = <&kp>, <&d_dollor>;
         };
 
         // 특수문자 : r, %
@@ -384,6 +402,15 @@
             #binding-cells = <0>;
             tapping-term-ms = <200>;
             bindings = <&kp A>, <&kp ASTRK>;
+        };
+
+        a_ctrl: a_ctrl {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+            quick-tap-ms = <150>;
+            bindings = <&kp>, <&a_aster>; // &kp는 첫 번째 인자(LCTRL)를 받음
         };
 
         // 특수문자 : h, 하이푼
@@ -419,11 +446,11 @@
         };
 
         // 특수문자 : b, 백슬래시
-        b_slsh: b_slsh {
+        z_bslsh: z_bslsh {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp B>, <&kp BSLH>;
+            bindings = <&kp Z>, <&kp BSLH>;
         };
 
         // 특수문자 : o, 오얼 파이프
@@ -442,13 +469,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q     &ht LGUI W   &kp E     &kp R      &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P
+            &kp Q     &ht LGUI W   &e_eql     &r_ratio &kp t_tilde     &kp Y   &u_undrhyp    &kp I      &o_or      &p_plus
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-           &ht LCTRL A &ht LSHFT S &ht LALT D &kp F     &kp G          &kp H      &kp J     &k_alt_dance RALT 0 &l_shft_dance RSHFT 0 &sqt_ctrl_dance RCTRL 0
+       &a_ctrl LCTRL 0 &s_shft LSHFT 0 &d_alt LALT 0 &kp F &g_golbange &h_hyp     &kp J   &k_alt_dance RALT 0 &l_shft_dance RSHFT 0 &sqt_ctrl_dance RCTRL 0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      &kp X      &kp C      &kp V      &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+            &z_bslsh  &kp X      &kp C      &v_car      &b_bang        &n_nd      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                               &mo 2      &mo 1        &lt 3 SPACE &lt 4 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
