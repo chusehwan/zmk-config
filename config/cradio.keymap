@@ -469,7 +469,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q     &ht LGUI W   &e_eql     &r_ratio &kp t_tilde     &kp Y   &u_undrhyp    &kp I      &o_or      &p_plus
+            &kp Q     &ht LGUI W   &e_eql     &r_ratio   &t_tilde        &kp Y   &u_undrhyp    &kp I      &o_or      &p_plus
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
        &a_ctrl LCTRL 0 &s_shft LSHFT 0 &d_alt LALT 0 &kp F &g_golbange &h_hyp     &kp J   &k_alt_dance RALT 0 &l_shft_dance RSHFT 0 &sqt_ctrl_dance RCTRL 0
