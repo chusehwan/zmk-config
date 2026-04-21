@@ -378,6 +378,62 @@
             bindings = <&kp N>, <&kp AMPS>;
         };
 
+        // 특수문자 : a, 애스터리스크
+        a_aster: a_aster {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp A>, <&kp ASTRK>;
+        };
+
+        // 특수문자 : h, 하이푼
+        h_hyp: h_hyp {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp H>, <&kp MINUS>;
+        };
+
+        // 특수문자 : u, 언더하이푼
+        u_undrhyp: u_undrhyp {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp U>, <&kp UNDER>;
+        };
+
+        // 특수문자 : e, 이콜
+        e_eql: e_eql {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp E>, <&kp EQUAL>;
+        };
+
+        // 특수문자 : p, 플러스
+        p_plus: p_plus {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp P>, <&kp PLUS>;
+        };
+
+        // 특수문자 : b, 백슬래시
+        b_slsh: b_slsh {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp B>, <&kp BSLH>;
+        };
+
+        // 특수문자 : o, 오얼 파이프
+        o_or: o_or {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp O>, <&kp PIPE>;
+        };
+
     }; // behaviors 블록 전체 닫기
 
     keymap {
