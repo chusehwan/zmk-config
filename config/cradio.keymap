@@ -305,7 +305,7 @@
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp L>, <&kp RPAR>;
+            bindings = <&kp T>, <&kp TILDE>;
         };
 
         // 특수문자 : b, ! 
