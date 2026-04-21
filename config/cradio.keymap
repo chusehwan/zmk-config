@@ -268,7 +268,7 @@
             bindings = <&kp>, <&kp>;
         };
 
-        // K 탭 댄스: 1번 누르면 K, 2번 3번 4번 누르면 괄호열기 변환 
+        // K 탭 댄스
         k_par: k_parenthesis {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -284,7 +284,7 @@
             bindings = <&kp>, <&k_par>;
         };
 
-        // L 탭 댄스: 1번 누르면 L, 2번 3번 4번 누르면 괄호닫기 변환 
+        // L 탭 댄스
         l_par: l_parenthesis {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -298,7 +298,8 @@
             flavor = "tap-preferred";
             tapping-term-ms = <250>;
             bindings = <&kp>, <&l_par>;
-        };
+        }; 
+
 
         // 특수문자 : t, ~ 
         t_tilde : t_tilde {
