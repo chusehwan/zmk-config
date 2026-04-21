@@ -256,7 +256,7 @@
         };  
     };
 
-  behaviors {
+    behaviors {
         ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -267,6 +267,7 @@
             bindings = <&kp>, <&kp>;
         };
 
+        // K 탭 댄스
         k_par: k_parenthesis {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -282,6 +283,7 @@
             bindings = <&kp>, <&k_par>;
         };
 
+        // L 탭 댄스
         l_par: l_parenthesis {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -297,6 +299,23 @@
             bindings = <&kp>, <&l_par>;
         };
 
+        // 따옴표/콜론 탭 댄스 (추가됨)
+        col_sem_dance: col_sem_dance {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp SQT>, <&kp COLON>, <&kp SEMI>;
+        };
+
+        // 따옴표 홀드탭 (추가됨)
+        sqt_ctrl_dance: sqt_ctrl_dance {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <250>;
+            bindings = <&kp>, <&col_sem_dance>;
+        };
+
         t_tilde: t_tilde {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
@@ -310,7 +329,7 @@
             tapping-term-ms = <200>;
             bindings = <&kp B>, <&kp EXCL>;
         };
-    }; // behaviors 끝
+    };
 
     keymap {
         compatible = "zmk,keymap";
