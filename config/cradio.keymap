@@ -338,6 +338,46 @@
             bindings = <&kp G>, <&kp AT>;
         };
 
+        // 특수문자 : s, #
+        s_sharp: s_sharp {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp S>, <&kp HASH>;
+        };
+
+        // 특수문자 : d, $
+        d_dollor: d_dollor {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp D>, <&kp DLLR>;
+        };
+
+        // 특수문자 : r, %
+        r_ratio: r_ratio {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp R>, <&kp PRCNT>;
+        };
+
+        // 특수문자 : v, ^
+        v_car: v_car {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp V>, <&kp CARET>;
+        };
+
+        // 특수문자 : n, &
+        n_nd: n_nd {
+            compatible = "zmk,behavior-tap-dance";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp N>, <&kp AMPS>;
+        };
+
     }; // behaviors 블록 전체 닫기
 
     keymap {
