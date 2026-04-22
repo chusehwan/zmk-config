@@ -331,19 +331,11 @@
             bindings = <&kp T>, <&kp TILDE>;
         };
 
-        b_bang: b_bang {
+        b_bang_bslsh: b_bang_bslsh {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp B>, <&kp EXCL>;
-        };
-
-         // 특수문자 : g, @
-        g_golbange: g_golbange {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp G>, <&kp AT>;
+            bindings = <&kp B>, <&kp EXCL>, <&kp BSLH>;
         };
 
         // 특수문자 : s, #
@@ -380,20 +372,12 @@
             bindings = <&kp>, <&d_dollor>;
         };
 
-        // 특수문자 : r, %
-        r_ratio: r_ratio {
+        // 특수문자 : caret, ^
+        c_car: c_car {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp R>, <&kp PRCNT>;
-        };
-
-        // 특수문자 : v, ^
-        v_car: v_car {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp V>, <&kp CARET>;
+            bindings = <&kp C>, <&kp CARET>;
         };
 
         // 특수문자 : n, &
@@ -404,12 +388,12 @@
             bindings = <&kp N>, <&kp AMPS>;
         };
 
-        // 특수문자 : a, 애스터리스크
+        // 특수문자 : a, 애스터리스크, 앳(골뱅이)
         a_aster: a_aster {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp A>, <&kp ASTRK>;
+            bindings = <&kp A>, <&kp ASTRK>, <&kp AT>;
         };
 
         a_ctrl: a_ctrl {
@@ -445,20 +429,12 @@
             bindings = <&kp E>, <&kp EQUAL>;
         };
 
-        // 특수문자 : p, 플러스
-        p_plus: p_plus {
+        // 특수문자 : p, 플러스, 퍼센트
+        p_plus_percent: p_plus_percent {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
             tapping-term-ms = <200>;
-            bindings = <&kp P>, <&kp PLUS>;
-        };
-
-        // 특수문자 : b, 백슬래시
-        z_bslsh: z_bslsh {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
-            tapping-term-ms = <200>;
-            bindings = <&kp Z>, <&kp BSLH>;
+            bindings = <&kp P>, <&kp PLUS>, <&kp PRCNT>;
         };
 
         // 특수문자 : o, 오얼 파이프
@@ -477,13 +453,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R       │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-            &kp Q     &ht LGUI W   &e_eql     &r_ratio   &t_tilde        &kp Y   &u_undrhyp    &kp I      &o_or      &p_plus
+            &kp Q     &ht LGUI W   &e_eql     &kp R     &t_tilde        &kp Y   &u_undrhyp    &kp I      &o_or    &p_plus_percent
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-       &a_ctrl LCTRL 0 &s_shft LSHFT 0 &d_alt LALT 0 &kp F &g_golbange &h_hyp     &kp J   &k_alt_dance RALT 0 &l_shft_dance RSHFT 0 &sqt_ctrl_dance RCTRL 0
+       &a_ctrl LCTRL 0 &s_shft LSHFT 0 &d_alt LALT 0 &kp F &kp G        &h_hyp    &kp J   &k_alt_dance RALT 0 &l_shft_dance RSHFT 0 &sqt_ctrl_dance RCTRL 0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &z_bslsh  &kp X      &kp C      &v_car      &b_bang        &n_nd      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+              &kp Z    &kp X      &c_car      &kp V    &b_bang_bslsh   &n_nd      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                               &mo 2      &mo 1        &lt 3 SPACE &lt 4 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
