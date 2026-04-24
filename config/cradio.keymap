@@ -105,9 +105,9 @@
             wait-ms = <7>;
             tap-ms = <7>;
             bindings 
-            = <&kp DOT &kp G &kp R &kp O &kp U &kp P &kp UNDER &kp B &kp Y &kp LPAR &kp SQT &kp SQT &kp RPAR>
-            , <&kp DOT &kp A &kp G &kp G &kp LPAR &kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR>
-            , < &kp SQT &kp SQT &kp RPAR &kp RPAR &kp LEFT &kp LEFT &kp LEFT &kp LEFT>;
+                = <&kp DOT &kp G &kp R &kp O &kp U &kp P &kp UNDER &kp B &kp Y &kp LPAR &kp SQT &kp SQT &kp RPAR>
+                , <&kp DOT &kp A &kp G &kp G &kp LPAR &kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR>
+                , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT>;
         };
 
         pl_not_null: pl_not_null {
@@ -244,7 +244,7 @@
         };  
 
          // j + g = .group_by('').agg( = pl.col(''))
-        combo_plgroup {
+        combo_plagg {
             timeout-ms = <35>;
             key-positions = <16 14>; 
             bindings = <&pl_agg>;   
@@ -265,7 +265,7 @@
             flavor = "tap-preferred";
             tapping-term-ms = <220>;
             quick-tap-ms = <150>;
-            require-prior-idle-ms = <100>;
+            // require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
     }; 
