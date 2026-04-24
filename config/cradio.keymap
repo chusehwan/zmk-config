@@ -92,7 +92,7 @@
                 , <&kp P &kp L &kp DOT &kp A &kp L &kp L &kp LPAR &kp RPAR &kp DOT>  
                 , <&kp E &kp X &kp C &kp L &kp U &kp D &kp E &kp LPAR>               
                 , <&kp SQT &kp SQT &kp RPAR &kp RPAR>                                
-                , <&kp LEFT &kp LEFT>;  
+                , <&kp LEFT &kp LEFT &kp LEFT>;  
         };
 
         pl_agg: pl_agg {
@@ -103,8 +103,7 @@
             bindings = <&kp DOT &kp G &kp R &kp O &kp U &kp P &kp UNDER &kp B &kp Y &kp LPAR &kp SQT &kp SQT &kp RPAR>
                     , <&kp DOT &kp A &kp G &kp G &kp LPAR>                                                         
                     , <&kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR> 
-                    , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT 
-                        &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>;
+                    , <&kp LEFT &kp LEFT>;
         };
 
         pl_not_null: pl_not_null {
@@ -112,11 +111,13 @@
             #binding-cells = <0>;
             wait-ms = <30>;
             tap-ms = <30>;
-            bindings = <&kp DOT &kp I &kp S &kp UNDER &kp N &kp O &kp T &kp UNDER &kp N &kp U &kp L &kp L &kp LPAR &kp RPAR>,
-                    <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>,
-                    <&macro_press &kp LSHFT>,
-                    <&kp RIGHT &kp RIGHT &kp RIGHT &kp RIGHT>,
-                    <&macro_release &kp LSHFT>;
+            bindings
+                = <&kp DOT &kp I &kp S &kp UNDER &kp N &kp O &kp T &kp UNDER &kp N &kp U &kp L &kp L &kp LPAR &kp RPAR>
+                , <&kp LEFT &kp LEFT>
+                , <&macro_press &kp LSHFT>
+                , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT>
+                , <&macro_release &kp LSHFT>
+                ;
         };
 
         pl_collect: pl_collect {
@@ -173,8 +174,8 @@
         // w + t = 윈도우 + 탭    
         combo_win_tab {
             timeout-ms = <50>;
-            key-positions = <1 4>; // W(1)와 T(4)의 위치 번호
-            bindings = <&kp LGUI(TAB)>; // 윈도우 + 탭 실행
+            key-positions = <1 4>; 
+            bindings = <&kp LG(TAB)>; // LGUI(TAB)의 단축형인 LG(TAB)을 주로 사용합니다.
         };
 
         // f + p  = pl.col('')
@@ -276,7 +277,7 @@
         k_par: k_parenthesis {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             bindings = <&kp K>, <&kp LPAR>, <&kp LBKT>, <&kp LBRC>;
         };
 
@@ -284,7 +285,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <250>;
+            tapping-term-ms = <350>;
             bindings = <&kp>, <&k_par>;
         };
 
@@ -292,7 +293,7 @@
         l_par: l_parenthesis {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             bindings = <&kp L>, <&kp RPAR>, <&kp RBKT>, <&kp RBRC>;
         };
 
@@ -300,7 +301,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <250>;
+            tapping-term-ms = <350>;
             bindings = <&kp>, <&l_par>;
         };
 
@@ -308,7 +309,7 @@
         col_sem_dance: col_sem_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             bindings = <&kp SQT>, <&kp COLON>, <&kp SEMI>;
         };
 
@@ -317,21 +318,21 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <250>;
+            tapping-term-ms = <350>;
             bindings = <&kp>, <&col_sem_dance>;
         };
 
         t_tilde: t_tilde {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             bindings = <&kp T>, <&kp TILDE>;
         };
 
         b_bang_bslsh: b_bang_bslsh {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             bindings = <&kp B>, <&kp EXCL>, <&kp BSLH>;
         };
 
@@ -339,7 +340,7 @@
         s_sharp: s_sharp {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             bindings = <&kp S>, <&kp HASH>;
         };
 
@@ -347,7 +348,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             quick-tap-ms = <150>;
             bindings = <&kp>, <&s_sharp>;
         };
@@ -356,7 +357,7 @@
         d_dollor: d_dollor {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             bindings = <&kp D>, <&kp DLLR>;
         };
 
@@ -364,7 +365,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             quick-tap-ms = <150>;
             bindings = <&kp>, <&d_dollor>;
         };
@@ -373,7 +374,7 @@
         c_car: c_car {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             bindings = <&kp C>, <&kp CARET>;
         };
 
@@ -381,7 +382,7 @@
         n_nd: n_nd {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             bindings = <&kp N>, <&kp AMPS>;
         };
 
@@ -389,7 +390,7 @@
         a_aster: a_aster {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             bindings = <&kp A>, <&kp ASTRK>, <&kp AT>;
         };
 
@@ -397,8 +398,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            quick-tap-ms = <150>;
+            tapping-term-ms = <350>;
+            quick-tap-ms = <250>;
             bindings = <&kp>, <&a_aster>; // &kp는 첫 번째 인자(LCTRL)를 받음
         };
 
@@ -406,7 +407,7 @@
         h_hyp: h_hyp {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             bindings = <&kp H>, <&kp MINUS>;
         };
 
@@ -414,7 +415,7 @@
         u_undrhyp: u_undrhyp {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             bindings = <&kp U>, <&kp UNDER>;
         };
 
@@ -422,7 +423,7 @@
         e_eql: e_eql {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             bindings = <&kp E>, <&kp EQUAL>;
         };
 
@@ -430,7 +431,7 @@
         p_plus_percent: p_plus_percent {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             bindings = <&kp P>, <&kp PLUS>, <&kp PRCNT>;
         };
 
@@ -438,7 +439,7 @@
         o_or: o_or {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <350>;
             bindings = <&kp O>, <&kp PIPE>;
         };
     }; 
