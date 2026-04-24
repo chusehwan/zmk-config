@@ -471,10 +471,10 @@
             &trans      &trans     &trans     &trans    &trans         &kp DEL    &kp HOME    &kp UP     &kp END    &kp INS 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ SCROL UP │ LEFT     │ DOWN     │ RIGHT    │  TAB     │
-            &tog 4      &trans     &trans      &tog 3    &trans         &msc SCRL_UP(20)     &kp LEFT   &kp DOWN   &kp RIGHT   &kp TAB
+            &tog 4      &trans     &tog 4     &tog 3    &trans         &trans     &kp LEFT   &kp DOWN   &kp RIGHT   &kp TAB
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ SCROL DN │ PG_UP    │          │ PG_DN    │ CAPS     │
-             &trans    &trans      &trans   &trans      &trans        &msc SCRL_DOWN(20)     &kp PG_UP   &trans     &kp PG_DN  &kp CAPS
+             &trans    &trans      &trans   &trans      &trans        &trans    &kp PG_UP   &trans     &kp PG_DN  &kp CAPS
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans          &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
