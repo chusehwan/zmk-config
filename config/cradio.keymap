@@ -23,8 +23,8 @@
         pl_col: pl_col {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <10>;
+            wait-ms = <5>;
+            tap-ms = <5>;
             bindings
                 = <&kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR>
                 , <&kp LEFT &kp LEFT>;
@@ -35,35 +35,35 @@
         compatible = "zmk,combos";
         // k + l = ENTER
         combo_enter {
-            timeout-ms = <50>;          // 동시에 눌러야 하는 제한 시간 (ms)
+            timeout-ms = <15>;          // 동시에 눌러야 하는 제한 시간 (ms)
             key-positions = <17 18>;   // K와 L의 물리적 위치 번호
             bindings = <&kp ENTER>;     // 실행할 키
         };
 
          // j + k = BACKSPACE 
         combo_backspace {
-            timeout-ms = <50>;
+            timeout-ms = <15>;
             key-positions = <16 17>;
             bindings = <&kp BSPC>;
         };
 
          // w + e = esc 
         combo_esc {
-            timeout-ms = <50>;
+            timeout-ms = <15>;
             key-positions = <1 2>;
             bindings = <&kp ESC>;
         }; 
 
         // w + t = 윈도우 + 탭    
         combo_win_tab {
-            timeout-ms = <50>;
+            timeout-ms = <15>;
             key-positions = <1 4>; 
             bindings = <&kp LG(TAB)>; // LGUI(TAB)의 단축형인 LG(TAB)을 주로 사용합니다.
         };
 
         // f + p  = pl.col('')
         combo_plcol {
-            timeout-ms = <50>;
+            timeout-ms = <315>;
             key-positions = <13 9>; 
             bindings = <&pl_col>;   
         };
