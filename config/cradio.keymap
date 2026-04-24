@@ -103,8 +103,7 @@
                 = <&kp DOT &kp G &kp R &kp O &kp U &kp P &kp UNDER &kp B &kp Y &kp LPAR &kp SQT &kp SQT &kp RPAR>
                 , <&kp DOT &kp A &kp G &kp G &kp LPAR>
                 , <&kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR>
-                , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>
-                , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>;
+                , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp>;
         };
 
         pl_not_null: pl_not_null {
@@ -293,7 +292,7 @@
             &trans      &trans     &trans     &trans    &trans         &kp DEL    &kp HOME    &kp UP     &kp END    &kp INS 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ SCROL UP │ LEFT     │ DOWN     │ RIGHT    │  TAB     │
-             &trans    &trans     &trans     &tog 3     &tog 4         &trans     &kp LEFT   &kp DOWN   &kp RIGHT   &kp TAB
+             &kp LCTRL &kp LALT    &trans     &kp LSHFT  &tog 4         &trans     &kp LEFT   &kp DOWN   &kp RIGHT   &kp TAB
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ SCROL DN │ PG_UP    │          │ PG_DN    │ CAPS     │
              &trans    &trans      &trans   &trans      &trans        &trans    &kp PG_UP   &trans     &kp PG_DN  &kp CAPS
@@ -312,22 +311,6 @@
             &trans     &trans     &trans      &trans     &trans          &trans    &kp N4     &kp N5     &kp N6     &kp N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │    1     │    2     │    3     │          │
-             &trans    &trans     &trans     &trans     &trans          &trans    &kp N1     &kp N2     &kp N3     &trans
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans         &trans     &trans
-        //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
-            >;
-        };
-        special_layer_2 {
-            bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │          │          │          │          │          │
-             &trans    &trans     &trans     &trans     &trans          &trans    &kp N7     &kp N8     &kp N9     &trans 
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │          │          │         │
-            &trans     &trans     &trans      &trans     &trans          &trans    &kp N4     &kp N5     &kp N6     &kp N0
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │          │         │          │          │
              &trans    &trans     &trans     &trans     &trans          &trans    &kp N1     &kp N2     &kp N3     &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &trans     &trans
