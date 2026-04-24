@@ -23,8 +23,8 @@
         pl_col: pl_col {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
+            wait-ms = <1>;
+            tap-ms = <1>;
             bindings
                 = <&kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR>
                 , <&kp LEFT &kp LEFT>;
@@ -33,8 +33,8 @@
         pl_sort: pl_sort {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
+            wait-ms = <1>;
+            tap-ms = <1>;
             bindings
                 = <&kp DOT &kp S &kp O &kp R &kp T &kp LPAR &kp SQT &kp SQT &kp RPAR>
                 , <&kp LEFT &kp LEFT>;
@@ -43,8 +43,8 @@
         pl_select: pl_select {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
+            wait-ms = <1>;
+            tap-ms = <1>;
             bindings
                 = <&kp DOT &kp S &kp E &kp L &kp E &kp C &kp T>
                 , <&kp LPAR &kp LBKT &kp SQT &kp SQT &kp RBKT &kp RPAR>
@@ -54,8 +54,8 @@
         pl_with: pl_with {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
+            wait-ms = <1>;
+            tap-ms = <1>;
             bindings
                 = <&kp DOT &kp W &kp I &kp T &kp H &kp UNDER &kp C &kp O &kp L &kp U &kp M &kp N &kp S>
                 , <&kp LPAR &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR> 
@@ -66,8 +66,8 @@
         pl_filter: pl_filter {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
+            wait-ms = <1>;
+            tap-ms = <1>;
             bindings
                 = <&kp DOT &kp F &kp I &kp L &kp T &kp E &kp R>
                 , <&kp LPAR &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR>
@@ -78,16 +78,16 @@
         pl_unique: pl_unique {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
+            wait-ms = <1>;
+            tap-ms = <1>;
             bindings = <&kp DOT &kp U &kp N &kp I &kp Q &kp U &kp E &kp LPAR &kp RPAR>;
         };
 
         pl_exclude: pl_exclude {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
+            wait-ms = <1>;
+            tap-ms = <1>;
             bindings = <&kp DOT &kp S &kp E &kp L &kp E &kp C &kp T &kp LPAR>            
                 , <&kp P &kp L &kp DOT &kp A &kp L &kp L &kp LPAR &kp RPAR &kp DOT>  
                 , <&kp E &kp X &kp C &kp L &kp U &kp D &kp E &kp LPAR>               
@@ -98,33 +98,36 @@
         pl_agg: pl_agg {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
-            bindings = <&kp DOT &kp G &kp R &kp O &kp U &kp P &kp UNDER &kp B &kp Y &kp LPAR &kp SQT &kp SQT &kp RPAR>
-                    , <&kp DOT &kp A &kp G &kp G &kp LPAR>                                                         
-                    , <&kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR> 
-                    , <&kp LEFT &kp LEFT>;
+            wait-ms = <1>;
+            tap-ms = <1>;
+            bindings
+                = <&kp DOT &kp G &kp R &kp O &kp U &kp P &kp UNDER &kp B &kp Y &kp LPAR &kp SQT &kp SQT &kp RPAR>
+                , <&kp DOT &kp A &kp G &kp G &kp LPAR>
+                , <&kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR>
+                , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT> // 10
+                , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT> // 20
+                ;
         };
 
         pl_not_null: pl_not_null {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
-            bindings
+            wait-ms = <1>;
+            tap-ms = <1>;
+            bindings 
                 = <&kp DOT &kp I &kp S &kp UNDER &kp N &kp O &kp T &kp UNDER &kp N &kp U &kp L &kp L &kp LPAR &kp RPAR>
                 , <&kp LEFT &kp LEFT>
                 , <&macro_press &kp LSHFT>
                 , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT>
                 , <&macro_release &kp LSHFT>
-                ;
+                ; // 여기서 문장이 끝났음을 명확히 표시
         };
 
         pl_collect: pl_collect {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
+            wait-ms = <1>;
+            tap-ms = <1>;
             bindings = <&kp DOT &kp C &kp O &kp L &kp L &kp E &kp C &kp T &kp LPAR &kp RPAR>,
                     <&kp LEFT>;
         };
@@ -132,8 +135,8 @@
         pl_head: pl_head {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
+            wait-ms = <1>;
+            tap-ms = <1>;
             bindings = <&kp DOT &kp H &kp E &kp A &kp D &kp LPAR &kp RPAR>,
                     <&kp LEFT>;
         };
@@ -141,8 +144,8 @@
         pl_set_rows: pl_set_rows {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
+            wait-ms = <1>;
+            tap-ms = <1>;
             bindings 
                 = <&kp P &kp L &kp DOT &kp C &kp O &kp N &kp F &kp I &kp G &kp DOT &kp S &kp E &kp T &kp UNDER &kp T &kp B &kp L &kp UNDER &kp R &kp O &kp W &kp S &kp LPAR &kp RPAR>
                 , <&kp LEFT>;
@@ -277,7 +280,7 @@
         k_par: k_parenthesis {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             bindings = <&kp K>, <&kp LPAR>, <&kp LBKT>, <&kp LBRC>;
         };
 
@@ -285,7 +288,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             bindings = <&kp>, <&k_par>;
         };
 
@@ -293,7 +296,7 @@
         l_par: l_parenthesis {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             bindings = <&kp L>, <&kp RPAR>, <&kp RBKT>, <&kp RBRC>;
         };
 
@@ -301,7 +304,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             bindings = <&kp>, <&l_par>;
         };
 
@@ -309,7 +312,7 @@
         col_sem_dance: col_sem_dance {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             bindings = <&kp SQT>, <&kp COLON>, <&kp SEMI>;
         };
 
@@ -318,21 +321,21 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             bindings = <&kp>, <&col_sem_dance>;
         };
 
         t_tilde: t_tilde {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             bindings = <&kp T>, <&kp TILDE>;
         };
 
         b_bang_bslsh: b_bang_bslsh {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             bindings = <&kp B>, <&kp EXCL>, <&kp BSLH>;
         };
 
@@ -340,7 +343,7 @@
         s_sharp: s_sharp {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             bindings = <&kp S>, <&kp HASH>;
         };
 
@@ -348,7 +351,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             quick-tap-ms = <150>;
             bindings = <&kp>, <&s_sharp>;
         };
@@ -357,7 +360,7 @@
         d_dollor: d_dollor {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             bindings = <&kp D>, <&kp DLLR>;
         };
 
@@ -365,7 +368,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             quick-tap-ms = <150>;
             bindings = <&kp>, <&d_dollor>;
         };
@@ -374,7 +377,7 @@
         c_car: c_car {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             bindings = <&kp C>, <&kp CARET>;
         };
 
@@ -382,7 +385,7 @@
         n_nd: n_nd {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             bindings = <&kp N>, <&kp AMPS>;
         };
 
@@ -390,7 +393,7 @@
         a_aster: a_aster {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             bindings = <&kp A>, <&kp ASTRK>, <&kp AT>;
         };
 
@@ -398,8 +401,8 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <350>;
-            quick-tap-ms = <250>;
+            tapping-term-ms = <300>;
+            quick-tap-ms = <150>;
             bindings = <&kp>, <&a_aster>; // &kp는 첫 번째 인자(LCTRL)를 받음
         };
 
@@ -407,7 +410,7 @@
         h_hyp: h_hyp {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             bindings = <&kp H>, <&kp MINUS>;
         };
 
@@ -415,7 +418,7 @@
         u_undrhyp: u_undrhyp {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             bindings = <&kp U>, <&kp UNDER>;
         };
 
@@ -423,7 +426,7 @@
         e_eql: e_eql {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             bindings = <&kp E>, <&kp EQUAL>;
         };
 
@@ -431,7 +434,7 @@
         p_plus_percent: p_plus_percent {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             bindings = <&kp P>, <&kp PLUS>, <&kp PRCNT>;
         };
 
@@ -439,7 +442,7 @@
         o_or: o_or {
             compatible = "zmk,behavior-tap-dance";
             #binding-cells = <0>;
-            tapping-term-ms = <350>;
+            tapping-term-ms = <300>;
             bindings = <&kp O>, <&kp PIPE>;
         };
     }; 
@@ -468,10 +471,10 @@
             &trans      &trans     &trans     &trans    &trans         &kp DEL    &kp HOME    &kp UP     &kp END    &kp INS 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ SCROL UP │ LEFT     │ DOWN     │ RIGHT    │  TAB     │
-            &trans      &trans     &tog 4     &tog 3    &trans         &trans     &kp LEFT   &kp DOWN   &kp RIGHT   &kp TAB
+            &tog 4      &trans     &trans      &tog 3    &trans         &msc SCRL_UP(20)     &kp LEFT   &kp DOWN   &kp RIGHT   &kp TAB
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ SCROL DN │ PG_UP    │          │ PG_DN    │ CAPS     │
-             &trans    &trans      &trans   &trans      &trans        &trans     &kp PG_UP   &trans     &kp PG_DN  &kp CAPS
+             &trans    &trans      &trans   &trans      &trans        &msc SCRL_DOWN(20)     &kp PG_UP   &trans     &kp PG_DN  &kp CAPS
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans          &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
