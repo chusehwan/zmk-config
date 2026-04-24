@@ -197,7 +197,7 @@
          // k + a = asterisk
         combo_aster {
             timeout-ms = <35>;
-            key-positions = <17 10;
+            key-positions = <17 10>;
             bindings = <&kp ASTRK>;
         }; 
    
