@@ -258,7 +258,7 @@
         ht: hold_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "balanced";
+            flavor = "hold-preferred";
             tapping-term-ms = <200>; // 0.2초 이상 누를 때 컨트롤로 인식
             quick-tap-ms = <150>;    // 빠르게 연타하면 그냥 A가 나오게 함
             require-prior-idle-ms = <0>;
@@ -289,10 +289,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │ DELETE   │ HOME     │   UP     │    END   │ INSERT   │
-            &trans      &trans     &trans     &trans    &trans         &kp DEL    &kp HOME    &kp UP     &kp END    &kp INS 
+            &trans      &trans     &trans     &trans    &tog 4         &kp DEL    &kp HOME    &kp UP     &kp END    &kp INS 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ SCROL UP │ LEFT     │ DOWN     │ RIGHT    │  TAB     │
-             &kp LCTRL &kp LALT    &trans     &kp LSHFT  &tog 4         &trans     &kp LEFT   &kp DOWN   &kp RIGHT   &kp TAB
+             &kp LCTRL &kp LALT    &kp LGUI  &kp LSHFT  &tog 3         &trans     &kp LEFT   &kp DOWN   &kp RIGHT   &kp TAB
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │ SCROL DN │ PG_UP    │          │ PG_DN    │ CAPS     │
              &trans    &trans      &trans   &trans      &trans        &trans    &kp PG_UP   &trans     &kp PG_DN  &kp CAPS
