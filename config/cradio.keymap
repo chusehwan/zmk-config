@@ -432,7 +432,7 @@
         };  
 
          // s + d =screen shot 
-        combo_plsetrow {
+        combo_screenshot {
             timeout-ms = <35>;
             key-positions = <11 12>; 
             bindings = <&kp LS(LG(S))>;   
