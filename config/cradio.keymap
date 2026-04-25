@@ -436,12 +436,13 @@
             bindings = <&kp>, <&kp>;
         };
 
-         td_layer: tap_dance_layer {
-            compatible = "zmk,behavior-tap-dance";
-            #binding-cells = <0>;
+         l1_l4: layer_tap_hold {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            // 탭하면 레이어 1로 이동(&to 1), 홀드하면 레이어 2 활성화(&mo 2)
-            bindings = <&to 4>, <&mo 1>;
+            // 홀드 시 첫 번째 인자(&mo), 탭 시 두 번째 인자(&to) 실행
+            bindings = <&mo>, <&to>;
         };
     }; 
     keymap {
@@ -458,7 +459,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
            &ht LCTRL Z    &kp X      &kp C      &kp V    &kp B   &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                            &td_layer      &mo 1        &lt 4 SPACE &lt 5 BSPC
+                                            &mo 2      &l1_l4 1 4        &lt 4 SPACE &lt 5 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };  
