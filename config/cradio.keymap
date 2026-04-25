@@ -99,16 +99,6 @@
                 , <&kp LEFT &kp LEFT &kp LEFT>;  
         };
 
-        pl_agg: pl_agg {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <10>;
-            tap-ms = <15>;
-            bindings = <&kp DOT &kp G &kp R &kp O &kp U &kp P &kp UNDER &kp B &kp Y &kp LPAR &kp SQT &kp SQT &kp RPAR>
-                    , <&kp DOT &kp A &kp G &kp G &kp LPAR &kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR>
-                    , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT>; 
-        };
-
         pl_not_null: pl_not_null {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -146,6 +136,15 @@
             bindings 
                 = <&kp P &kp L &kp DOT &kp C &kp O &kp N &kp F &kp I &kp G &kp DOT &kp S &kp E &kp T &kp UNDER &kp T &kp B &kp L &kp UNDER &kp R &kp O &kp W &kp S &kp LPAR &kp RPAR>
                 , <&kp LEFT>;
+        };
+
+        pl_group: pl_group {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <7>;
+            tap-ms = <7>;
+            bindings = <&kp DOT &kp G &kp R &kp O &kp U &kp P &kp UNDER &kp B &kp Y &kp LPAR &kp SQT &kp SQT &kp RPAR>
+             , <&kp DOT &kp A &kp G &kp G &kp LPAR &kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR>; 
         };
 
     };
@@ -411,10 +410,10 @@
         };  
 
          // j + g = .group_by('').agg( = pl.col(''))
-        combo_plagg {
+        combo_plgroup {
             timeout-ms = <35>;
             key-positions = <16 14>; 
-            bindings = <&pl_agg>;   
+            bindings = <&pl_filter>;   
         };  
 
          // j + r = pl.Config.set_tbl_rows() 
