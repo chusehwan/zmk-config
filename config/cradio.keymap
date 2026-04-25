@@ -166,7 +166,7 @@
         };
 
          // h + j = cntrl + BACKSPACE 
-        combo_backspace {
+        combo_backspace_ctrl {
             timeout-ms = <35>;
             key-positions = <15 16>;
             bindings = <&kp LC(BSPC)>;
