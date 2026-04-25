@@ -436,13 +436,13 @@
             bindings = <&kp>, <&kp>;
         };
 
-         layer_tab_1: layer_tap_hold {
+        lt_to: layer_tap_to {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            flavor = "tap-preferred";
+            flavor = "balanced";       // 가장 정석적인 판정 (모호함을 줄임)
             tapping-term-ms = <200>;
-            // 홀드 시 첫 번째 인자(&mo), 탭 시 두 번째 인자(&to) 실행
-            bindings = <&mo>, <&to>;
+            quick-tap-ms = <150>;      // 연타 시 오작동 방지
+            bindings = <&mo>, <&to>;   // 홀드는 mo, 탭은 to
         };
 
         layer_tab_2: layer_tap_hold_2 {
@@ -468,7 +468,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
            &ht LCTRL Z    &kp X      &kp C      &kp V    &kp B   &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                         &layer_tab_1 2 3 &layer_tab_1 1 4 &kp SPACE &layer_tab_2 5 BSPC
+                                         &lt_to 2 3   &lt_to 1 4       &kp SPACE  &layer_tab_2 5 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };  
