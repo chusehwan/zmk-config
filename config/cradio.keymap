@@ -107,7 +107,7 @@
             bindings 
                 = <&kp DOT &kp G &kp R &kp O &kp U &kp P &kp UNDER &kp B &kp Y &kp LPAR &kp SQT &kp SQT &kp RPAR>
                 , <&kp DOT &kp A &kp G &kp G &kp LPAR &kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR>
-                , <&kp LEFT>, <&kp LEFT>, <&kp LEFT>, <&kp LEFT>; // 콤마로 구분해서 명확하게 전달
+                , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT>; // 콤마로 구분해서 명확하게 전달
         };
 
         pl_not_null: pl_not_null {
@@ -446,7 +446,7 @@
             &kp Q         &kp W   &kp E     &kp R      &kp T         &kp Y      &kp U        &kp I      &kp O    &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            &kp A    &ht LALT S &ht LCTRL D &ht LSHFT F  &ht LGUI G  &ht RGUI H  &ht RSHFT J &ht RCTRL K &ht RALT L &kp SQT
+            &kp A    &ht LALT S &ht LCTRL D &ht LSHFT F  &ht LGUI G  &ht RGUI H  &ht RSHFT J &ht LCTRL K &ht RALT L &kp SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
               &kp Z    &kp X      &kp C      &kp V    &kp B   &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
@@ -461,10 +461,10 @@
         //│          │          │          │          │          │   │ DELETE   │ HOME     │   UP     │    END   │ INSERT   │
             &trans      &trans     &trans     &trans    &tog 4         &kp DEL    &kp HOME    &kp UP     &kp END    &kp INS 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │ SCROL UP │ LEFT     │ DOWN     │ RIGHT    │  TAB     │
-             &kp LCTRL &kp LALT    &kp LGUI  &kp LSHFT  &tog 3         &trans     &kp LEFT   &kp DOWN   &kp RIGHT   &kp TAB
+        //│          │          │          │          │          │   │          │ LEFT     │ DOWN     │ RIGHT    │  TAB     │
+             &trans     &trans    &trans     &trans     &tog 3         &trans     &kp LEFT   &kp DOWN   &kp RIGHT   &kp TAB 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │ SCROL DN │ PG_UP    │          │ PG_DN    │ CAPS     │
+        //│          │          │          │          │          │   │          │ PG_UP    │          │ PG_DN    │ CAPS     │
              &trans    &trans      &trans   &trans      &trans        &trans    &kp PG_UP   &trans     &kp PG_DN  &kp CAPS
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans          &trans     &trans
