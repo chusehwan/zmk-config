@@ -413,7 +413,7 @@
         combo_plgroup {
             timeout-ms = <35>;
             key-positions = <16 14>; 
-            bindings = <&pl_filter>;   
+            bindings = <&pl_group>;   
         };  
 
          // j + r = pl.Config.set_tbl_rows() 
