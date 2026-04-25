@@ -207,10 +207,10 @@
             bindings = <&kp HASH>;
         }; 
 
-         // k + d = dollor
+         // d + m = dollor
         combo_dollor {
             timeout-ms = <35>;
-            key-positions = <17 12>;
+            key-positions = <12 26>;
             bindings = <&kp DLLR>;
         }; 
 
@@ -347,7 +347,7 @@
             bindings = <&pl_col>;   
         };
 
-                // f + u = .unique()
+        // f + u = .unique()
         combo_pluniq {
             timeout-ms = <35>;
             key-positions = <13 6>; 
