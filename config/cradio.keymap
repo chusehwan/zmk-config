@@ -445,7 +445,7 @@
             bindings = <&mo>, <&to>;
         };
 
-        layer_tab_2: layer_tap_hold {
+        layer_tab_2: layer_tap_hold_2 {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
