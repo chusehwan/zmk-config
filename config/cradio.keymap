@@ -144,7 +144,9 @@
             wait-ms = <7>;
             tap-ms = <7>;
             bindings = <&kp DOT &kp G &kp R &kp O &kp U &kp P &kp UNDER &kp B &kp Y &kp LPAR &kp SQT &kp SQT &kp RPAR>
-             , <&kp DOT &kp A &kp G &kp G &kp LPAR &kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR>; 
+             , <&kp DOT &kp A &kp G &kp G &kp LPAR &kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR>
+             , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>
+             , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>; 
         };
 
     };
