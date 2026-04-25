@@ -479,12 +479,12 @@
             &trans      &trans   &trans       &trans    &tog 5         &kp DEL    &kp HOME    &kp UP     &kp END    &kp INS 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │ LEFT     │ DOWN     │ RIGHT    │  TAB     │
-             &trans     &trans    &trans     &trans     &tog 3         &trans     &kp LEFT   &kp DOWN   &kp RIGHT   &kp TAB 
+             &trans     &trans &msc SCRL_LEFT &msc SCRL_RIGHT &tog 3 &msc SCRL_UP  &kp LEFT   &kp DOWN   &kp RIGHT   &kp TAB 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │ PG_UP    │          │ PG_DN    │ CAPS     │
-             &trans    &trans      &trans   &trans      &trans        &trans    &kp PG_UP   &trans     &kp PG_DN  &kp CAPS
+             &trans    &trans      &trans   &trans      &trans        &msc SCRL_DOWN &kp PG_UP   &trans     &kp PG_DN  &kp CAPS
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &trans     &trans          &trans     &trans
+                                             &trans     &trans         &mkp LCLK  &mkp RCLK
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };
