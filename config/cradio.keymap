@@ -468,7 +468,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
            &ht LCTRL Z    &kp X      &kp C      &kp V    &kp B   &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                         &layer_tab_1 2 3 &layer_tab_1 1 4 &kp SPACE layer_tab_2 5 BSPC
+                                         &layer_tab_1 2 3 &layer_tab_1 1 4 &kp SPACE &layer_tab_2 5 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };  
