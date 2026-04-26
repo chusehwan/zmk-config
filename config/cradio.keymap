@@ -291,7 +291,7 @@
             bindings = <&kp MINUS>;
         }; 
 
-         // d + u = under
+         // d + u = under 자주사용하는거라 u말고 j에배치함
         combo_UNDER {
             timeout-ms = <35>;
             key-positions = <12 16>;
@@ -495,7 +495,7 @@
              &trans     &trans      &trans  &trans      &trans       &msc SCRL_UP  &kp LEFT   &kp DOWN   &kp RIGHT   &kp TAB 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │ PG_UP    │          │ PG_DN    │ CAPS     │
-          &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_UP &mmv MOVE_RIGHT &trans  &msc SCRL_DOWN &kp PG_UP   &trans     &kp PG_DN  &kp CAPS
+          &mmv MOVE_LEFT &mmv MOVE_UP &mmv MOVE_DOWN &mmv MOVE_RIGHT &trans  &msc SCRL_DOWN &kp PG_UP   &trans     &kp PG_DN  &kp CAPS
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                              &trans     &trans         &mkp LCLK  &mkp RCLK
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
