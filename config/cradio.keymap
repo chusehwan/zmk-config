@@ -481,7 +481,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z        &kp X      &kp C      &kp V    &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                &mo 3    &mo 1        &lt 2 SPACE  &layer_tab_2 4 BSPC
+                                                &mo 2    &mo 1        &lt 3 SPACE  &layer_tab_2 4 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };                 
@@ -508,12 +508,12 @@
             &trans      &trans      &msc SCRL_UP     &trans     &trans        &trans   &msc SCRL_UP &mmv MOVE_UP &msc SCRL_DOWN    &trans 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-             &trans &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT      &trans &msc SCRL_LEFT  &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT &msv SCRL_RIGHT 
+             &trans &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT      &trans &msc SCRL_LEFT  &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT &msc SCRL_RIGHT 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
              &trans    &trans     &trans      &trans     &trans        &trans       &trans    &trans      &trans     &trans  
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                             &mkp LCLK  &mkp RCLK         &trans   &trans
+                                             &trans     &trans       &mkp LCLK  &mkp RCLK
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };        
