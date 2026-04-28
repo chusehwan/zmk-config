@@ -4,8 +4,8 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 800  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 750  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 30    // default: 10
 
 #include <dt-bindings/zmk/pointing.h>
 
@@ -466,6 +466,14 @@
             // 홀드 시 첫 번째 인자(&mo), 탭 시 두 번째 인자(&to) 실행
             bindings = <&mo>, <&kp>;
         };
+
+        to_mo: to_mo {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";    // 짧게 누르기 반응성을 높임
+            tapping-term-ms = <200>;     
+            bindings = <&mo>, <&to>;     // 순서: [Hold 시 동작], [Tap 시 동작]
+        };
     }; 
     keymap {
         compatible = "zmk,keymap";
@@ -481,7 +489,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z        &kp X      &kp C      &kp V    &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                &to 2    &mo 1        &lt 3 SPACE  &layer_tab_2 4 BSPC
+                                                &to_mo 3 2    &mo 1        &lt 3 SPACE  &layer_tab_2 4 BSPC
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };                 
@@ -551,5 +559,5 @@
             >;
         };
     };
-};
- 
+}
+;
