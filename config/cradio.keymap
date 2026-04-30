@@ -135,7 +135,7 @@ macros {
         wait-ms = <7>;
         tap-ms = <7>;
         bindings 
-            = <&kp P &kp L &kp DOT &kp C &kp O &kp N &kp F &kp I &kp G &kp DOT &kp S &kp E &kp T &kp UNDER &kp T &kp B &kp L &kp UNDER &kp R &kp O &kp W &kp S &kp LPAR &kp RPAR>
+            = <&kp P &kp L &kp DOT &kp LS(C) &kp O &kp N &kp F &kp I &kp G &kp DOT &kp S &kp E &kp T &kp UNDER &kp T &kp B &kp L &kp UNDER &kp R &kp O &kp W &kp S &kp LPAR &kp RPAR>
             , <&kp LEFT>;
     };
 
@@ -291,24 +291,24 @@ combos {
         bindings = <&kp MINUS>;
     }; 
 
-        // d + u = under 자주사용하는거라 u말고 j에배치함
+        // d + l = under 
     combo_UNDER {
         timeout-ms = <35>;
-        key-positions = <12 16>;
+        key-positions = <12 18>;
         bindings = <&kp UNDER>;
     }; 
 
-        // d + k = 소괄호열기
+        // d + j = 소괄호열기
     combo_LPAR {
         timeout-ms = <35>;
-        key-positions = <12 17>;
+        key-positions = <12 16>;
         bindings = <&kp LPAR>;
     }; 
 
-        // d + l = 소괄호 닫기
+        // d + k = 소괄호 닫기
     combo_RPAR {
         timeout-ms = <35>;
-        key-positions = <12 18>;
+        key-positions = <12 17>;
         bindings = <&kp RPAR>;
     }; 
 
