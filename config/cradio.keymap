@@ -520,13 +520,14 @@ keymap {
         bindings = <
     //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
     //│          │          │          │          │          │   │          │    7     │    8     │    9     │          │
-        &kp C_MUTE   &kp F7     &kp F8     &kp F9    &kp F11         &trans    &kp N7     &kp N8     &kp N9     &trans 
+        &kp C_MUTE   &kp F7     &kp F8     &kp F9    &kp F11         &kp PLUS    &kp N7     &kp N8     &kp N9     &kp MINUS 
     //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    //│          │          │          │          │          │   │          │    4     │    5     │    6     │    0     │
-        &ht LCTRL C_VOL_UP   &ht LSHFT F4 &ht LALT F5 &kp F6    &kp F10       &trans    &kp N4   &ht LALT N5 &ht RSHFT N6 &ht LCTRL N0
+    //│          │          │          │          │          
+    │  │          │    4     │    5     │    6     │    0     │
+        &ht LCTRL C_VOL_UP   &ht LSHFT F4 &ht LALT F5 &kp F6  &kp F10 &trans  &kp N4   &ht LALT N5 &ht RSHFT N6 &ht LCTRL N0
     //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
     //│          │          │          │          │          │   │          │    1     │    2     │    3     │          │
-        &kp C_VOL_DN  &kp F1     &kp F2     &kp F3    &kp F12        &trans    &kp N1     &kp N2     &kp N3     &trans
+        &kp C_VOL_DN  &kp F1     &kp F2     &kp F3    &kp F12      &kp ASTRK  &kp N1     &kp N2     &kp N3     &kp FSLH
     //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &trans     &trans         &trans     &trans
     //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
