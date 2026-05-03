@@ -504,7 +504,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
-        &kp C_MUTE   &trans   &msc SCRL_UP &trans     &trans       &kp LC(W) &kp LC(PG_UP) &mmv MOVE_UP &kp LC(PG_DN) &kp F11
+        &kp C_MUTE   &kp HOME   &msc SCRL_UP &kp END     &trans       &kp LC(W) &kp LC(PG_UP) &mmv MOVE_UP &kp LC(PG_DN) &kp F11
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
         &kp C_VOL_UP &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT  &trans &kp LEFT  &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT &kp RIGHT 
