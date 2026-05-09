@@ -439,35 +439,35 @@
         };  
 
             // left shift + ㅂ = ㅃ 
-        combo_screenshot {
+        combo_shiftq {
             timeout-ms = <30>;
             key-positions = <18 0>; 
             bindings = <&kp LS(Q)>;   
         };  
 
             // left shift + ㅈ = ㅉ 
-        combo_screenshot {
+        combo_shiftw {
             timeout-ms = <30>;
             key-positions = <18 1>; 
             bindings = <&kp LS(W)>;   
         };  
 
             // left shift + ㄷ = ㄸ 
-        combo_screenshot {
+        combo_shifte {
             timeout-ms = <30>;
             key-positions = <18 3>; 
             bindings = <&kp LS(E)>;   
         };  
 
             // left shift + ㄱ = ㄲ 
-        combo_screenshot {
+        combo_shiftr {
             timeout-ms = <30>;
             key-positions = <18 4>; 
             bindings = <&kp LS(R)>;   
         };  
 
             // left shift + ㅅ = ㅆ 
-        combo_screenshot {
+        combo_shiftt {
             timeout-ms = <30>;
             key-positions = <18 5>; 
             bindings = <&kp LS(T)>;   
