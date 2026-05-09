@@ -58,37 +58,31 @@
         };
 
         pl_with: pl_with {
-    compatible = "zmk,behavior-macro";
-    #binding-cells = <0>;
-    wait-ms = <15>;
-    tap-ms = <15>;
-    bindings 
-        // 1. 앞부분은 정상 입력
-        = <&kp DOT &kp W &kp I &kp T &kp H &kp UNDER &kp C &kp O &kp L &kp U &kp M &kp N & s &kp LPAR>
-        
-        // 2. 뒷부분을 '글자 -> 왼쪽 이동' 반복하여 커서 위치를 고정
-        // 입력 순서:  -> Left ->  -> Left -> ' -> Left ... 순으로 치면
-        // 최종적으로 .with_columns( [커서] = pl.col('') ) 상태가 됩니다.
-        , <&kp RPAR &kp LEFT>         // 
-        , <&kp RPAR &kp LEFT>         // 
-        , <&kp SQT &kp LEFT>          // '
-        , <&kp SQT &kp LEFT>          // '
-        , <&kp LPAR &kp LEFT>         // 
-        , <&kp L &kp LEFT>            // l
-        , <&kp O &kp LEFT>            // o
-        , <&kp C &kp LEFT>            // c
-        , <&kp DOT &kp LEFT>          // .
-        , <&kp L &kp LEFT>            // l
-        , <&kp P &kp LEFT>            // p
-        , <&kp SPACE &kp LEFT>        // space
-        , <&kp EQUAL &kp LEFT>        // =
-        , <&kp SPACE &kp LEFT>        // space (최종적으로 = 앞 위치)
-        ;
-};
-
-
-
-
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <15>;
+            tap-ms = <15>;
+            bindings 
+                // 1. 앞부분 입력 (&kp S로 수정 완료)
+                = <&kp DOT &kp W &kp I &kp T &kp H &kp UNDER &kp C &kp O &kp L &kp U &kp M &kp N &kp S &kp LPAR>
+                
+                // 2. 글자 -> 왼쪽 이동 반복
+                , <&kp RPAR &kp LEFT> 
+                , <&kp RPAR &kp LEFT> 
+                , <&kp SQT &kp LEFT>  
+                , <&kp SQT &kp LEFT>  
+                , <&kp LPAR &kp LEFT> 
+                , <&kp L &kp LEFT>    
+                , <&kp O &kp LEFT>    
+                , <&kp C &kp LEFT>    
+                , <&kp DOT &kp LEFT>  
+                , <&kp L &kp LEFT>    
+                , <&kp P &kp LEFT>    
+                , <&kp SPACE &kp LEFT>
+                , <&kp EQUAL &kp LEFT>
+                , <&kp SPACE &kp LEFT>
+                ;
+        };
 
         pl_filter: pl_filter {
             compatible = "zmk,behavior-macro";
