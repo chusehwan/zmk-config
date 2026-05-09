@@ -60,27 +60,22 @@
         pl_with: pl_with {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;  // 입력 간격을 30ms로 늘려 안정성 확보
+            wait-ms = <30>;
             tap-ms = <30>;
             bindings 
-                = <&kp DOT &kp W &kp I &kp T &kp H &kp UNDER &kp C &kp O &kp L &kp U &kp M &kp N &kp S &kp LPAR>
-                // 무한 루프가 발생하는 글자(L)와 방향키 사이의 간섭을 줄이기 위해 한 줄씩 정의
-                , <&kp RPAR &kp LEFT>
-                , <&kp RPAR &kp LEFT>
-                , <&kp SQT &kp LEFT>
-                , <&kp SQT &kp LEFT>
-                , <&kp LPAR &kp LEFT>
-                , <&kp L &kp LEFT>
-                , <&kp O &kp LEFT>
-                , <&kp C &kp LEFT>
-                , <&kp DOT &kp LEFT>
-                , <&kp L &kp LEFT>
-                , <&kp P &kp LEFT>
-                , <&kp SPACE &kp LEFT>
-                , <&kp EQUAL &kp LEFT>
-                , <&kp SPACE &kp LEFT>
+                = <&macro_pause_for_release>
+                // 1. 전체 문장을 한 번에 입력 (신호 뭉침 방지)
+                , <&kp DOT &kp W &kp I &kp T &kp H &kp UNDER &kp C &kp O &kp L &kp U &kp M &kp N &kp S 
+                &kp LPAR &kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR>
+                // 3. 단어 단위로 큼직하게 이동 (Ctrl + Left)
+                , <&kp LC(LEFT)>  // pl.col('') 끝으로 이동
+                , <&kp LC(LEFT)>  // pl 앞(공백)으로 이동
+                , <&kp LC(LEFT)>  // = 앞(공백)으로 이동
+                // 4. 미세 조정 (필요시 한두 칸만)
+                , <&kp LEFT>
                 ;
         };
+
 
 
         pl_filter: pl_filter {
