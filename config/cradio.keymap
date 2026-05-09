@@ -62,11 +62,10 @@
             #binding-cells = <0>;
             wait-ms = <7>;
             tap-ms = <7>;
-            bindings
+            bindings 
                 = <&kp DOT &kp W &kp I &kp T &kp H &kp UNDER &kp C &kp O &kp L &kp U &kp M &kp N &kp S>
-                , <&kp LPAR &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR> 
-                , <&kp SQT &kp SQT &kp RPAR &kp RPAR>      
-                , <&kp LEFT &kp LEFT &kp LEFT>;
+                , <&kp LPAR &kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR>
+                , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>;
         };
 
         pl_filter: pl_filter {
@@ -147,9 +146,13 @@
             #binding-cells = <0>;
             wait-ms = <7>;
             tap-ms = <7>;
-            bindings = <&kp DOT &kp G &kp R &kp O &kp U &kp P &kp UNDER &kp B &kp Y &kp LPAR &kp SQT &kp SQT &kp RPAR>
-                , <&kp DOT &kp A &kp G &kp G &kp LPAR &kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR>; 
+            bindings 
+                = <&kp DOT &kp G &kp R &kp O &kp U &kp P &kp UNDER &kp B &kp Y &kp LPAR &kp SQT &kp SQT &kp RPAR>
+                , <&kp DOT &kp A &kp G &kp G &kp LPAR &kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR>
+                , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT> 
+                ; // 총 22번 왼쪽으로 이동하여 .group_by(' 뒤에 커서 위치
         };
+
 
     };
     combos {
@@ -458,21 +461,21 @@
             // left shift + ㄷ = ㄸ 
         combo_shifte {
             timeout-ms = <30>;
-            key-positions = <18 3>; 
+            key-positions = <18 2>; 
             bindings = <&kp LS(E)>;   
         };  
 
             // left shift + ㄱ = ㄲ 
         combo_shiftr {
             timeout-ms = <30>;
-            key-positions = <18 4>; 
+            key-positions = <18 3>; 
             bindings = <&kp LS(R)>;   
         };  
 
             // left shift + ㅅ = ㅆ 
         combo_shiftt {
             timeout-ms = <30>;
-            key-positions = <18 5>; 
+            key-positions = <18 4>; 
             bindings = <&kp LS(T)>;   
         };  
     };
