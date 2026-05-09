@@ -60,29 +60,29 @@
         pl_with: pl_with {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <15>;
-            tap-ms = <15>;
+            wait-ms = <30>;  // 입력 간격을 30ms로 늘려 안정성 확보
+            tap-ms = <30>;
             bindings 
-                // 1. 앞부분 입력 (&kp S로 수정 완료)
                 = <&kp DOT &kp W &kp I &kp T &kp H &kp UNDER &kp C &kp O &kp L &kp U &kp M &kp N &kp S &kp LPAR>
-                
-                // 2. 글자 -> 왼쪽 이동 반복
-                , <&kp RPAR &kp LEFT> 
-                , <&kp RPAR &kp LEFT> 
-                , <&kp SQT &kp LEFT>  
-                , <&kp SQT &kp LEFT>  
-                , <&kp LPAR &kp LEFT> 
-                , <&kp L &kp LEFT>    
-                , <&kp O &kp LEFT>    
-                , <&kp C &kp LEFT>    
-                , <&kp DOT &kp LEFT>  
-                , <&kp L &kp LEFT>    
-                , <&kp P &kp LEFT>    
+                // 무한 루프가 발생하는 글자(L)와 방향키 사이의 간섭을 줄이기 위해 한 줄씩 정의
+                , <&kp RPAR &kp LEFT>
+                , <&kp RPAR &kp LEFT>
+                , <&kp SQT &kp LEFT>
+                , <&kp SQT &kp LEFT>
+                , <&kp LPAR &kp LEFT>
+                , <&macro_wait_time 50>      // L 입력 전 잠시 더 대기 (충돌 방지)
+                , <&kp L &kp LEFT>
+                , <&kp O &kp LEFT>
+                , <&kp C &kp LEFT>
+                , <&kp DOT &kp LEFT>
+                , <&kp L &kp LEFT>
+                , <&kp P &kp LEFT>
                 , <&kp SPACE &kp LEFT>
                 , <&kp EQUAL &kp LEFT>
                 , <&kp SPACE &kp LEFT>
                 ;
         };
+
 
         pl_filter: pl_filter {
             compatible = "zmk,behavior-macro";
