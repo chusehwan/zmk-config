@@ -432,7 +432,7 @@
         };  
 
             // j + o = .over('')
-        combo_plfilter {
+        combo_plover {
             timeout-ms = <30>;
             key-positions = <8 13>; 
             bindings = <&pl_over>;   
