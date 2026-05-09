@@ -475,26 +475,26 @@
             &kp Q         &kp W   &kp E     &kp R      &kp T         &kp Y      &kp U        &kp I      &kp O    &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            &ht LCTRL A &ht LSHFT S &ht LALT D &ht LGUI F &kp G       &ht RALT H    &ht RGUI J &ht LALT K &ht RSHFT L &ht LCTRL SQT
+            &ht LCTRL A &ht LSHFT S &ht LALT D &ht LGUI F &kp G       &ht CAPS H  &ht RGUI J &ht LALT K &ht RSHFT L &ht LCTRL SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z        &kp X      &kp C      &kp V    &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                        &to_mo 3 2    &layer_tab 1 TAB  &lt 3 SPACE  &layer_tab 4 BSPC
+                                        &to_mo 3 2    &layer_tab 1 TAB  &lt 3 SPACE  &layer_tab 4 RALT
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };                 
         direction_layer_1 {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│          │          │          │          │          │   │ DELETE   │ HOME     │   UP     │    END   │ INSERT   │
-            &trans      &trans   &msc SCRL_UP &trans       &trans      &kp DEL    &kp HOME    &kp UP     &kp END    &kp INS 
+        //│          │          │          │          │          │   │ DELETE   │          │   UP     │          │ INSERT   │
+            &trans      &trans   &msc SCRL_UP &trans       &trans      &kp DEL    &kp PG_UP    &kp UP  &kp PG_DN    &kp INS 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │ LEFT     │ DOWN     │ RIGHT    │  TAB     │
-            &trans &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT &trans &kp PG_UP  &kp LEFT  &kp DOWN   &kp RIGHT   &kp TAB 
+        //│          │          │          │          │          │   │          │ LEFT     │ DOWN     │ RIGHT    │          │
+            &trans   &trans  &msc SCRL_LEFT &msc SCRL_RIGHT &trans     &kp HOME  &kp LEFT  &kp DOWN   &kp RIGHT   &kp END 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│          │          │          │          │          │   │          │ PG_UP    │          │ PG_DN    │ CAPS     │
-            &trans     &trans      &trans  &trans      &trans         &kp PG_DN &msc SCRL_UP &msc SCRL_DOWN &trans &kp CAPS
+        //│          │          │          │          │          │   │          │          │          │          │          │
+            &trans     &trans   &msc SCRL_DOWN &trans    &trans         &trans  &msc SCRL_UP &msc SCRL_DOWN &trans &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                 &trans     &trans         &mkp LCLK  &mkp RCLK
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -504,13 +504,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
-        &kp C_MUTE   &trans   &msc SCRL_UP &trans     &trans       &kp LC(W) &kp LC(PG_UP) &mmv MOVE_UP &kp LC(PG_DN) &kp F11
+        &kp C_MUTE      &trans     &trans     &trans     &trans       &kp LC(W) &kp LC(PG_UP) &mmv MOVE_UP &kp LC(PG_DN) &kp F11
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-        &kp C_VOL_UP &msc SCRL_LEFT &msc SCRL_DOWN &msc SCRL_RIGHT  &trans &kp LEFT  &mmv MOVE_LEFT &mmv MOVE_DOWN   &mmv MOVE_RIGHT &kp RIGHT 
+        &kp C_VOL_UP  &trans  &msc SCRL_LEFT &msc SCRL_RIGHT &trans &kp LEFT  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp RIGHT 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-        &kp C_VOL_DN &kp C_PREV &kp C_PP &kp C_NEXT  &trans        &kp LA(LEFT) &msc SCRL_UP &msc SCRL_DOWN &kp F &kp LA(RIGHT)  
+        &kp C_VOL_DN &kp C_PREV    &kp C_PP &kp C_NEXT   &trans       &kp LA(LEFT) &msc SCRL_UP &msc SCRL_DOWN &kp F &kp LA(RIGHT)  
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                 &to 0     &to 0       &mkp LCLK  &mkp RCLK
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
@@ -520,13 +520,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │    7     │    8     │    9     │          │
-            &kp C_MUTE   &kp F7     &kp F8     &kp F9    &kp F11         &kp MINUS    &kp N7     &kp N8     &kp N9     &kp PLUS 
+           &kp C_MUTE   &kp F7     &kp F8     &kp F9    &kp F11       &kp MINUS    &kp N7     &kp N8     &kp N9     &kp PLUS 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │    4     │    5     │    6     │    0     │
-            &ht LCTRL C_VOL_UP   &ht LSHFT F4 &ht LALT F5 &kp F6    &kp F10       &trans    &kp N4   &ht LALT N5 &ht RSHFT N6 &ht LCTRL N0
+        &ht LCTRL C_VOL_UP &ht LSHFT F4 &ht LALT F5 &kp F6 &kp F10     &trans    &kp N4   &ht LALT N5 &ht RSHFT N6 &ht LCTRL N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │    1     │    2     │    3     │          │
-            &kp C_VOL_DN  &kp F1     &kp F2     &kp F3    &kp F12        &kp ASTRK    &kp N1     &kp N2     &kp N3     &kp FSLH
+          &kp C_VOL_DN  &kp F1     &kp F2     &kp F3    &kp F12        &kp ASTRK    &kp N1     &kp N2     &kp N3     &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                 &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
