@@ -70,7 +70,6 @@
                 , <&kp SQT &kp LEFT>
                 , <&kp SQT &kp LEFT>
                 , <&kp LPAR &kp LEFT>
-                , <&macro_wait_time 50>      // L 입력 전 잠시 더 대기 (충돌 방지)
                 , <&kp L &kp LEFT>
                 , <&kp O &kp LEFT>
                 , <&kp C &kp LEFT>
