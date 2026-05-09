@@ -60,11 +60,14 @@
         pl_with: pl_with {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <7>;
-            tap-ms = <7>;
+            wait-ms = <20>; 
+            tap-ms = <20>;  
             bindings 
-                = <&kp DOT &kp W &kp I &kp T &kp H &kp UNDER &kp C &kp O &kp L &kp U &kp M &kp N &kp S &kp LPAR &kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>;
+                = <&kp DOT &kp W &kp I &kp T &kp H &kp UNDER &kp C &kp O &kp L &kp U &kp M &kp N &kp S>
+                , <&kp LPAR &kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR>
+                , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>;
         };
+
 
         pl_filter: pl_filter {
             compatible = "zmk,behavior-macro";
