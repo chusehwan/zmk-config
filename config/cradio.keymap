@@ -59,27 +59,12 @@
 
         pl_with: pl_with {
             compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <40>;
-            tap-ms = <40>;
+            wait-ms = <7>; 
+            tap-ms = <7>;
             bindings 
-                = <&macro_pause_for_release>
-                // 1. 전체 문장을 한 번에 입력 (신호 뭉침 방지)
-                , <&kp DOT &kp W &kp I &kp T &kp H &kp UNDER &kp C &kp O &kp L &kp U &kp M &kp N &kp S 
-                &kp LPAR &kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR>
-                // 2. 잠시 쉬었다가 (버퍼 비우기)
-                , <&macro_wait_time 100>
-                // 3. 단어 단위로 큼직하게 이동 (Ctrl + Left)
-                , <&kp LC(LEFT)>  // pl.col('') 끝으로 이동
-                , <&kp LC(LEFT)>  // pl 앞(공백)으로 이동
-                , <&kp LC(LEFT)>  // = 앞(공백)으로 이동
-                // 4. 미세 조정 (필요시 한두 칸만)
-                , <&kp LEFT>
-                ;
+                <&kp DOT &kp W &kp I &kp T &kp H &kp UNDER &kp C &kp O &kp L &kp U &kp M &kp N &kp S 
+                &kp LPAR &kp SPACE &kp EQUAL &kp LPAR &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR &kp RPAR>;
         };
-
-
-
 
         pl_filter: pl_filter {
             compatible = "zmk,behavior-macro";
