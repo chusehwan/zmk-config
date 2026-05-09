@@ -60,14 +60,19 @@
         pl_with: pl_with {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <40>; // 7에서 20으로 상향
-            tap-ms = <40>;  // 7에서 20으로 상향
+            wait-ms = <15>;
+            tap-ms = <15>;
             bindings 
+                // 1. 전체 문구 뒷부분을 먼저 입력 (커서 뒤에 올 내용들)
                 = <&kp DOT &kp W &kp I &kp T &kp H &kp UNDER &kp C &kp O &kp L &kp U &kp M &kp N &kp S>
                 , <&kp LPAR &kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR>
-                , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT> 
+                
+                // 2. 입력한 글자 수(14자)만큼 한 번에 뒤로 돌아가서 고정
+                // = pl.col('') 이 부분이 총 14자입니다.
+                , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>
                 ;
         };
+
 
 
         pl_filter: pl_filter {
