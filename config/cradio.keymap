@@ -566,7 +566,7 @@
         //│          │          │          │          │          │   │          │          │          │          │          │
         &kp C_VOL_DN &kp C_PREV    &kp C_PP &kp C_NEXT   &trans       &kp LA(LEFT) &msc SCRL_UP &msc SCRL_DOWN &kp F &kp LA(RIGHT)  
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                                &to 0     &to 0       &mkp LCLK  &mkp RCLK
+                                                &to 0   &mkp LCLK      &mkp LCLK  &mkp RCLK
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };        
