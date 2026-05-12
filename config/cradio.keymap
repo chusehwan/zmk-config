@@ -4,11 +4,19 @@
     #include <behaviors.dtsi>
     #include <dt-bindings/zmk/keys.h>
     #include <dt-bindings/zmk/bt.h>
-    #define ZMK_POINTING_DEFAULT_MOVE_VAL 780  // default: 600
-    #define ZMK_POINTING_DEFAULT_SCRL_VAL 30    // default: 10
-
     #include <dt-bindings/zmk/pointing.h>
 
+
+&mmv {
+    acceleration-exponent = <1>;
+    time-to-max-speed-ms = <500>;
+    delay-ms = <0>;
+};
+
+&msc {
+    acceleration-exponent = <1>;
+    time-to-max-speed-ms = <40>;
+};
 
 
 
@@ -172,7 +180,7 @@
 
             // j + k = BACKSPACE 
         combo_backspace {
-            timeout-ms = <30>;
+            timeout-ms = <30>;  
             key-positions = <16 17>;
             bindings = <&kp BSPC>;
         };
@@ -233,10 +241,10 @@
             bindings = <&kp DLLR>;
         }; 
 
-            // k + e = equal
+            // d + f = equal
         combo_eql {
             timeout-ms = <30>;
-            key-positions = <17 2>;
+            key-positions = <12 13>;
             bindings = <&kp EQUAL>;
         }; 
 
@@ -254,10 +262,10 @@
             bindings = <&kp CARET>;
         }; 
         
-        // k + b = bang
+        // s + d = bang
         combo_bang {
             timeout-ms = <30>;
-            key-positions = <17 24>;
+            key-positions = <11 12>;
             bindings = <&kp EXCL>;
         }; 
 
@@ -289,6 +297,7 @@
             bindings = <&kp PIPE>;
         }; 
 
+
             // d + p = plus
         combo_PLUS {
             timeout-ms = <30>;
@@ -296,17 +305,17 @@
             bindings = <&kp PLUS>;
         }; 
 
-            // d + h = hyphen
+            // d + l = hyphen
         combo_MINUS {
             timeout-ms = <30>;
-            key-positions = <12 15>;
+            key-positions = <12 18>;
             bindings = <&kp MINUS>;
         }; 
 
-            // d + l = under 
+            // d + h = under 
         combo_UNDER {
             timeout-ms = <30>;
-            key-positions = <12 18>;
+            key-positions = <12 15>;
             bindings = <&kp UNDER>;
         }; 
 
@@ -450,10 +459,10 @@
             bindings = <&pl_set_rows>;   
         };  
 
-            // s + d =screen shot 
+            // e + r =screen shot 
         combo_screenshot {
             timeout-ms = <30>;
-            key-positions = <11 12>; 
+            key-positions = <2 3>; 
             bindings = <&kp LS(LG(S))>;   
         };  
 
@@ -519,6 +528,33 @@
             tapping-term-ms = <200>;     
             bindings = <&mo>, <&to>;     // 순서: [Hold 시 동작], [Tap 시 동작]
         };
+
+        td_cut: tap_dance_cut {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_CUT";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp X>, <&kp LC(X)>;
+        };
+
+        // 복사 (c 한 번: c, 두 번: Ctrl+C)
+        td_copy: tap_dance_copy {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_COPY";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp C>, <&kp LC(C)>;
+        };
+
+        // 붙여넣기 (v 한 번: v, 두 번: Ctrl+V)
+        td_paste: tap_dance_paste {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_PASTE";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp V>, <&kp LC(V)>;
+        };
+
     }; 
     keymap {
         compatible = "zmk,keymap";
@@ -532,7 +568,7 @@
             &ht LCTRL A &ht LSHFT S &ht LALT D &ht LGUI F &kp G       &ht CAPS H  &ht RGUI J &ht LALT K &ht RSHFT L &ht LCTRL SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z        &kp X      &kp C      &kp V    &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+            &kp Z      &td_cut    &td_copy   &td_paste   &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                         &to_mo 3 2    &layer_tab 1 TAB  &lt 3 SPACE  &layer_tab 4 RALT
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
