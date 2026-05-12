@@ -8,14 +8,14 @@
 
 
 &mmv {
-    acceleration-exponent = <1>;
-    time-to-max-speed-ms = <500>;
+    acceleration-exponent = <2>;      // 가속도 지수를 2로 높여서 누를수록 확 빨라지게 함
+    time-to-max-speed-ms = <300>;    // 최대 속도까지 도달 시간을 단축 (0.3초)
     delay-ms = <0>;
 };
 
 &msc {
-    acceleration-exponent = <1>;
-    time-to-max-speed-ms = <40>;
+    acceleration-exponent = <2>;      // 스크롤도 가속을 주어 더 시원하게 내려가게 함
+    time-to-max-speed-ms = <300>;
 };
 
 
