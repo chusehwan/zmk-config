@@ -158,6 +158,51 @@
                 = <&kp DOT &kp O &kp V &kp E &kp R &kp LPAR &kp SQT &kp SQT &kp RPAR>
                 , <&kp LEFT &kp LEFT> ;
         };
+
+        bracket: bracket {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <7>;
+            tap-ms = <7>;
+            bindings 
+                = <&kp LBKT &kp RBKT> ;
+        };
+
+        brace: brace {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <7>;
+            tap-ms = <7>;
+            bindings 
+                = <&kp LBRC &kp RBRC> ;
+        };
+
+        parant: parant {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <7>;
+            tap-ms = <7>;
+            bindings 
+                = <&kp LPAR &kp RPAR> ;
+        };
+
+        kr_thanks: kr_thanks {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <7>;
+            tap-ms = <7>;
+            bindings 
+                = <&kp R &kp K &kp A &kp T &kp A &kp G &kp S &kp T &kp K &kp N &kp D &kp G &kp K &kp T &kp P &kp D &kp Y &kp TILDE &kp EXCLAMATION> ;
+        };
+
+        kr_hello: kr_hello {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <7>;
+            tap-ms = <7>;
+            bindings 
+                = <&kp D &kp K &kp S &kp S &kp U &kp D &kp G &kp K &kp T &kp P &kp D &kp Y> ;
+        };
     };
     combos {
         compatible = "zmk,combos";
@@ -189,265 +234,22 @@
             bindings = <&kp ESC>;
         }; 
 
-            // k + w = won 
-        combo_won {
-            timeout-ms = <30>;
-            key-positions = <17 1>;
-            bindings = <&kp BSLH>;
-        }; 
-
-            // k + r = ratio
-        combo_ratio {
-            timeout-ms = <30>;
-            key-positions = <17 3>;
-            bindings = <&kp PRCNT>;
-        }; 
-
-            // k + t = tilde
-        combo_tilde {
-            timeout-ms = <30>;
-            key-positions = <17 4>;
-            bindings = <&kp TILDE>;
-        }; 
-
-            // k + a = asterisk
-        combo_aster {
-            timeout-ms = <30>;
-            key-positions = <17 10>;
-            bindings = <&kp ASTRK>;
-        }; 
-
-            // k + s = sharp
-        combo_sharp {
-            timeout-ms = <30>;
-            key-positions = <17 11>;
-            bindings = <&kp HASH>;
-        }; 
-
-            // d + m = money
-        combo_dollor {
-            timeout-ms = <30>;
-            key-positions = <12 26>;
-            bindings = <&kp DLLR>;
-        }; 
-
-            // d + f = equal
-        combo_eql {
-            timeout-ms = <30>;
-            key-positions = <12 13>;
-            bindings = <&kp EQUAL>;
-        }; 
-
-        // k + g = golbange
-        combo_at {
-            timeout-ms = <30>;
-            key-positions = <17 14>;
-            bindings = <&kp AT>;
-        }; 
-
-        // k + c = caret
-        combo_caret {
-            timeout-ms = <30>;
-            key-positions = <17 22>;
-            bindings = <&kp CARET>;
-        }; 
-        
-        // s + d = bang
-        combo_bang {
-            timeout-ms = <30>;
-            key-positions = <11 12>;
-            bindings = <&kp EXCL>;
-        }; 
-
-        // d + y = grave
-        combo_GRAVE {
-            timeout-ms = <30>;
-            key-positions = <12 5>;
-            bindings = <&kp GRAVE>;
-        }; 
-
-        // d + u = 중괄호열기
-        combo_LBKT {
-            timeout-ms = <30>;
-            key-positions = <12 6>;
-            bindings = <&kp LBKT>;
-        }; 
-
-        // d + i = 중괄호닫기
-        combo_RBKT {
-            timeout-ms = <30>;
-            key-positions = <12 7>;
-            bindings = <&kp RBKT>;
-        }; 
-
-            // d + o = or
-        combo_PIPE {
-            timeout-ms = <30>;
-            key-positions = <12 8>;
-            bindings = <&kp PIPE>;
-        }; 
-
-
-            // d + p = plus
-        combo_PLUS {
-            timeout-ms = <30>;
-            key-positions = <12 9>;
-            bindings = <&kp PLUS>;
-        }; 
-
-            // d + l = hyphen
-        combo_MINUS {
-            timeout-ms = <30>;
-            key-positions = <12 18>;
-            bindings = <&kp MINUS>;
-        }; 
-
-            // d + h = under 
-        combo_UNDER {
-            timeout-ms = <30>;
-            key-positions = <12 15>;
-            bindings = <&kp UNDER>;
-        }; 
-
-            // d + j = 소괄호열기
-        combo_LPAR {
-            timeout-ms = <30>;
-            key-positions = <12 16>;
-            bindings = <&kp LPAR>;
-        }; 
-
-            // d + k = 소괄호 닫기
-        combo_RPAR {
-            timeout-ms = <30>;
-            key-positions = <12 17>;
-            bindings = <&kp RPAR>;
-        }; 
 
             // d + ' = colon
         combo_COLON {
             timeout-ms = <30>;
-            key-positions = <12 19>;
+            key-positions = <18 19>;
             bindings = <&kp COLON>;
         }; 
 
-            // d + n = and
-        combo_AMPS {
-            timeout-ms = <30>;
-            key-positions = <12 25>;
-            bindings = <&kp AMPS>;
-        }; 
-
-            // d + , = 대괄호열기
-        combo_LBRC {
-            timeout-ms = <30>;
-            key-positions = <12 27>;
-            bindings = <&kp LBRC>;
-        }; 
-
-            // d + . = 대괄호 닫기
-        combo_RBRC {
-            timeout-ms = <30>;
-            key-positions = <12 28>;
-            bindings = <&kp RBRC>;
-        }; 
         
             // d + : = semicolon
         combo_SEMI {
             timeout-ms = <30>;
-            key-positions = <12 29>;
+            key-positions = <28 29>;
             bindings = <&kp SEMI>;
         }; 
 
-        // f + p  = pl.col('')
-        combo_plcol {
-            timeout-ms = <30>;
-            key-positions = <13 9>; 
-            bindings = <&pl_col>;   
-        };
-
-        // f + u = .unique()
-        combo_pluniq {
-            timeout-ms = <30>;
-            key-positions = <13 6>; 
-            bindings = <&pl_unique>;   
-        };
-
-        // f + n = .is_not_null()
-        combo_plnotnull {
-            timeout-ms = <30>;
-            key-positions = <13 25>; 
-            bindings = <&pl_not_null>;   
-        };    
-
-        // f + h = .head()
-        combo_plhead {
-            timeout-ms = <30>;
-            key-positions = <13 15>; 
-            bindings = <&pl_head>;   
-        }; 
-
-        // j + s = .select([''])
-        combo_plselect {
-            timeout-ms = <30>;
-            key-positions = <16 11>; 
-            bindings = <&pl_select>;   
-        };    
-
-        // j + e = .select(pl.all().exclude(''))
-        combo_plexclude {
-            timeout-ms = <30>;
-            key-positions = <16 2>; 
-            bindings = <&pl_exclude>;   
-        };   
-
-            // j + a = .sort()
-        combo_plsort {
-            timeout-ms = <30>;
-            key-positions = <16 10>; 
-            bindings = <&pl_sort>;   
-        };       
-
-            // j + w = .with_columns(pl.col(''))
-        combo_plwith {
-            timeout-ms = <30>;
-            key-positions = <16 1>; 
-            bindings = <&pl_with>;   
-        };  
-
-            // j + c = .collect()
-        combo_plcollect {
-            timeout-ms = <30>;
-            key-positions = <16 22>; 
-            bindings = <&pl_collect>;   
-        };  
-
-            // j + f = .filter(pl.col(''))
-        combo_plfilter {
-            timeout-ms = <30>;
-            key-positions = <16 13>; 
-            bindings = <&pl_filter>;   
-        };  
-
-            // j + o = .over('')
-        combo_plover {
-            timeout-ms = <30>;
-            key-positions = <8 13>; 
-            bindings = <&pl_over>;   
-        };  
-
-            // j + g = .group_by('').agg( = pl.col(''))
-        combo_plgroup {
-            timeout-ms = <30>;
-            key-positions = <16 14>;  
-            bindings = <&pl_group>;   
-        };  
-
-            // j + r = pl.Config.set_tbl_rows() 
-        combo_plsetrow {
-            timeout-ms = <30>;
-            key-positions = <3 16>; 
-            bindings = <&pl_set_rows>;   
-        };  
 
             // e + r =screen shot 
         combo_screenshot {
@@ -616,18 +418,18 @@
 
         special_layer_4 {
             bindings = <
-            &trans &trans &trans &trans &trans   &kp TILDE &kp EXCL &kp AT &kp HASH &kp PLUS 
+            &kp GRAVE &trans &trans &trans &trans   &kp TILDE &kp EXCL &kp AT &kp HASH &kp PLUS 
             &trans &trans &trans &trans &trans   &kp MINUS &kp UNDER &kp EQUAL &kp CARET &kp ASTRK
-            &trans &trans &trans &trans &trans   &kp AMPS &kp DLLR &kp BSLH &kp PIPE &kp PRCNT 
-            &trans &trans &trans &trans
+            &kp LBRC &kp RBRC &kp COLON &trans &kp SEMI   &kp AMPS &kp DLLR &kp BSLH &kp PIPE &kp PRCNT 
+            &kp LBKT &kp RBKT &kp LPAR &kp RPAR
             >;
         };
 
         macro_layer_5 {
             bindings = <
             &pl_unique &pl_with &pl_exclude &pl_set_rows &pl_head   &trans &trans &trans &trans &trans 
-            &pl_sort &pl_select &pl_col &pl_filter &pl_group   &trans &trans &trans &trans &trans 
-            &trans &pl_not_null &pl_collect &pl_over &trans   &trans &trans &trans &trans &trans 
+            &pl_sort &pl_select &pl_col &pl_filter &pl_group   &trans &trans &parant &bracket &brace 
+            &kr_hello &pl_not_null &pl_collect &pl_over &kr_thanks   &trans &trans &trans &trans &trans 
             &trans &trans &trans &trans
             >;
         };
