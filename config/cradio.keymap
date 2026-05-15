@@ -192,7 +192,7 @@
             wait-ms = <7>;
             tap-ms = <7>;
             bindings 
-                = <&kp R &kp K &kp A &kp T &kp A &kp G &kp S &kp T &kp K &kp N &kp D &kp G &kp K &kp T &kp P &kp D &kp Y &kp TILDE &kp EXCLAMATION> ;
+                = <&kp R &kp K &kp A &kp T &kp K &kp G &kp K &kp Q &kp S &kp L &kp E &kp K &kp TILDE &kp EXCLAMATION> ;
         };
 
         kr_hello: kr_hello {
