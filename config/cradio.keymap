@@ -555,12 +555,12 @@
             &kp Q         &kp W   &kp E     &kp R      &kp T         &kp Y      &kp U        &kp I      &kp O    &kp P
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  A       │  S       │  D       │  F       │  G       │   │  H       │  J       │  K       │  L       │ ' "      │
-            &ht LCTRL A &ht LSHFT S &ht LALT D &ht LGUI F &kp G       &ht CAPS H  &ht RGUI J &ht LALT K &ht RSHFT L &ht LCTRL SQT
+            &ht LCTRL A &ht LSHFT S &ht LALT D &lt 4 F &ht LGUI G     &ht CAPS H  &lt 5 J &ht LALT K &ht RSHFT L &ht LCTRL SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &td_cut    &td_copy   &td_paste   &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                        &to_mo 3 2    &layer_tab 1 TAB  &lt 3 SPACE  &layer_tab 4 RALT
+                                        &to_mo 3 2    &layer_tab 1 TAB  &lt 3 SPACE  &layer_tab 6 RALT
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };                 
@@ -595,7 +595,8 @@
                                                 &to 0   &mkp LCLK      &mkp LCLK  &mkp RCLK
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
-        };        
+        };
+
         number_layer_3 {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -611,9 +612,27 @@
                                                 &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
-
         };
-        admin_layer_4 {
+
+        special_layer_4 {
+            bindings = <
+            &trans &trans &trans &trans &trans   &kp TILDE &kp EXCL &kp AT &kp HASH &kp PLUS 
+            &trans &trans &trans &trans &trans   &kp MINUS &kp UNDER &kp EQUAL &kp CARET &kp ASTRK
+            &trans &trans &trans &trans &trans   &kp AMPS &kp DLLR &kp BSLH &kp PIPE &kp PRCNT 
+            &trans &trans &trans &trans
+            >;
+        };
+
+        macro_layer_5 {
+            bindings = <
+            &pl_unique &pl_with &pl_exclude &pl_set_rows &pl_head   &trans &trans &trans &trans &trans 
+            &pl_sort &pl_select &pl_col &pl_filter &pl_group   &trans &trans &trans &trans &trans 
+            &trans &pl_not_null &pl_collect &pl_over &trans   &trans &trans &trans &trans &trans 
+            &trans &trans &trans &trans
+            >;
+        };
+
+        admin_layer_6 {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│ RESET    │          │          │          │          │   │          │          │          │          │  RESET   │
