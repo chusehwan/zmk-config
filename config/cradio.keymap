@@ -165,7 +165,7 @@
             wait-ms = <7>;
             tap-ms = <7>;
             bindings 
-                = <&kp LBKT &kp RBKT> ;
+                = <&kp LBKT &kp RBKT &kp LEFT> ;
         };
 
         brace: brace {
@@ -292,6 +292,20 @@
             timeout-ms = <30>;
             key-positions = <18 4>; 
             bindings = <&kp LS(T)>;   
+        };  
+
+        // ㅅ + ㅋ = 좌리셋 
+        combo_lreset {
+            timeout-ms = <30>;
+            key-positions = <4 20>; 
+            bindings = <&sys_reset>;   
+        };  
+
+        // ㅛ + / = 우리셋 
+        combo_lreset {
+            timeout-ms = <30>;
+            key-positions = <5 29>; 
+            bindings = <&sys_reset>;   
         };  
     };
     behaviors {
