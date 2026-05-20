@@ -217,32 +217,32 @@
             bindings = <&kp ENTER>;     // 실행할 키
         };
 
-            // j + k = BACKSPACE 
+            // m + , = home
+        combo_backspace {
+            timeout-ms = <30>;  
+            key-positions = <26 27>;
+            bindings = <&kp HOME>;
+        };
+
+            // n + m = voldn 
         combo_backspace {
             timeout-ms = <30>;  
             key-positions = <16 17>;
-            bindings = <&kp BSPC>;
-        };
-
-            // n + m = volumedown 
-        combo_backspace {
-            timeout-ms = <30>;  
-            key-positions = <26 25>;
             bindings = <&kp C_VOL_DN>;
         };
 
-            // n + m = volumeup 
+           // , + . = volup 
         combo_backspace {
             timeout-ms = <30>;  
             key-positions = <27 28>;
             bindings = <&kp C_VOL_UP>;
         };
 
-        // m + , = home 
+            // j + k = BACKSPACE 
         combo_backspace {
             timeout-ms = <30>;  
-            key-positions = <26 27>;
-            bindings = <&kp HOME>;
+            key-positions = <16 17>;
+            bindings = <&kp BSPC>;
         };
 
             // h + j = cntrl + BACKSPACE 
