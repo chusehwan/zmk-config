@@ -62,7 +62,7 @@
             tap-ms = <10>;
             bindings 
                 = <&kp DOT &kp W &kp I &kp T &kp H &kp UNDER &kp C &kp O &kp L &kp U &kp M &kp N &kp S>
-                , <&kp LPAR &kp SPACE &kp EQUAL &kp LPAR &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR &kp RPAR>;
+                , <&kp LPAR &kp SPACE &kp EQUAL &kp LPAR &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR &kp RPAR &kp LEFT &kp LEFT &kp LEFT &kp LEFT>;
         };
 
 
@@ -174,7 +174,7 @@
             wait-ms = <7>;
             tap-ms = <7>;
             bindings 
-                = <&kp LBRC &kp RBRC> ;
+                = <&kp LBRC &kp RBRC &kp LEFT> ;
         };
 
         parant: parant {
@@ -183,7 +183,7 @@
             wait-ms = <7>;
             tap-ms = <7>;
             bindings 
-                = <&kp LPAR &kp RPAR> ;
+                = <&kp LPAR &kp RPAR &kp LEFT> ;
         };
 
         kr_thanks: kr_thanks {
