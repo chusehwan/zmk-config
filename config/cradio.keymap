@@ -302,7 +302,7 @@
         };  
 
         // ㅛ + / = 우리셋 
-        combo_lreset {
+        combo_rreset {
             timeout-ms = <30>;
             key-positions = <5 29>; 
             bindings = <&sys_reset>;   
