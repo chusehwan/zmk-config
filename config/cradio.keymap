@@ -58,8 +58,8 @@
         pl_with: pl_with {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>; // 안정성을 위해 대기 시간을 10ms에서 15ms로 살짝 늘렸습니다.
-            tap-ms = <30>;
+            wait-ms = <15>; // 안정성을 위해 대기 시간을 10ms에서 15ms로 살짝 늘렸습니다.
+            tap-ms = <15>;
             bindings 
                 = <&kp DOT>, <&kp W>, <&kp I>, <&kp T>, <&kp H>, <&kp UNDER>, <&kp C>, <&kp O>, <&kp L>, <&kp U>, <&kp M>, <&kp S>
                 , <&kp LPAR>, <&kp SPACE>, <&kp EQUAL>, <&kp LPAR>, <&kp P>, <&kp L>, <&kp DOT>, <&kp C>, <&kp O>, <&kp L>
@@ -143,12 +143,13 @@
         pl_group: pl_group {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>;
-            tap-ms = <30>;
+            wait-ms = <15>; // 안정적인 입력을 위해 15ms로 조정했습니다.
+            tap-ms = <15>;
             bindings 
-                = <&kp DOT &kp G &kp R &kp O &kp U &kp P &kp UNDER &kp B &kp Y &kp LPAR &kp SQT &kp SQT &kp RPAR>
-                , <&kp DOT &kp A &kp G &kp G &kp LPAR &kp EQUAL &kp SPACE &kp P &kp L &kp DOT &kp C &kp O &kp L &kp LPAR &kp SQT &kp SQT &kp RPAR &kp RPAR>
-                , <&kp LEFT>, <&kp LEFT>, <&kp LEFT>;
+                = <&kp DOT>, <&kp G>, <&kp R>, <&kp O>, <&kp U>, <&kp P>, <&kp UNDER>, <&kp B>, <&kp Y>
+                , <&kp LPAR>, <&kp SQT>, <&kp SQT>, <&kp RPAR>
+                , <&kp DOT>, <&kp A>, <&kp G>, <&kp G>, <&kp LPAR>, <&kp EQUAL>, <&kp SPACE>, <&kp P>, <&kp L>
+                , <&kp DOT>, <&kp C>, <&kp O>, <&kp L>, <&kp LPAR>, <&kp SQT>, <&kp SQT>, <&kp RPAR>, <&kp RPAR>, <&kp RPAR>;
         };
 
         pl_over: pl_over {
