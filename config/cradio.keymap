@@ -227,7 +227,7 @@
             // n + m = voldn 
         combo_voldn {
             timeout-ms = <30>;  
-            key-positions = <16 17>;
+            key-positions = <25 26>;
             bindings = <&kp C_VOL_DN>;
         };
 
