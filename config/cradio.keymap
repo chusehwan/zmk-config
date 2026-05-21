@@ -55,27 +55,20 @@
                 , <&kp LEFT &kp LEFT &kp LEFT>;
         };
 
-        pl_text: pl_text {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            wait-ms = <15>; 
-            tap-ms = <15>;
-            bindings 
-                = <&kp DOT>, <&kp W>, <&kp I>, <&kp T>, <&kp H>, <&kp UNDER>, <&kp C>, <&kp O>, <&kp L>, <&kp U>, <&kp M>, <&kp N>, <&kp S>
-                , <&kp LPAR>, <&kp SPACE>, <&kp EQUAL>, <&kp LPAR>, <&kp P>, <&kp L>, <&kp DOT>, <&kp C>, <&kp O>, <&kp L>
-                , <&kp LPAR>, <&kp SQT>, <&kp SQT>, <&kp RPAR>, <&kp RPAR>, <&kp RPAR>;
-        };
-
-        // 2. 텍스트 입력이 끝난 후 방향키를 독립적으로 실행하는 매크로 (실제 키맵에 매핑할 이름)
         pl_with: pl_with {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <30>; // 방향키 입력은 버퍼 꼬임을 막기 위해 대기 시간을 30ms로 넉넉히 줍니다.
-            tap-ms = <30>;
+            wait-ms = <15>;
+            tap-ms = <15>;
             bindings 
-                = <&pl_text>  // 오타 수정 후 정상적으로 앞선 매크로 호출
-                , <&kp LEFT>, <&kp LEFT>, <&kp LEFT>, <&kp LEFT>, <&kp LEFT>; 
+           
+                = <&kp EQUAL>, <&kp LPAR>, <&kp P>, <&kp L>, <&kp DOT>, <&kp C>, <&kp O>, <&kp L>
+                , <&kp LPAR>, <&kp SQT>, <&kp SQT>, <&kp RPAR>, <&kp RPAR>, <&kp RPAR>
+                , <&kp HOME>
+                , <&kp DOT>, <&kp W>, <&kp I>, <&kp T>, <&kp H>, <&kp UNDER>, <&kp C>, <&kp O>, <&kp L>, <&kp U>, <&kp M>, <&kp N>, <&kp S>
+                , <&kp LPAR>, <&kp SPACE>;
         };
+
 
         pl_filter: pl_filter {
             compatible = "zmk,behavior-macro";
