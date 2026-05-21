@@ -145,14 +145,17 @@
         pl_group: pl_group {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            wait-ms = <15>; // 안정적인 입력을 위해 15ms로 조정했습니다.
+            wait-ms = <15>;
             tap-ms = <15>;
             bindings 
-                = <&kp DOT>, <&kp G>, <&kp R>, <&kp O>, <&kp U>, <&kp P>, <&kp UNDER>, <&kp B>, <&kp Y>
-                , <&kp LPAR>, <&kp SQT>, <&kp SQT>, <&kp RPAR>
-                , <&kp DOT>, <&kp A>, <&kp G>, <&kp G>, <&kp LPAR>, <&kp EQUAL>, <&kp SPACE>, <&kp P>, <&kp L>
-                , <&kp DOT>, <&kp C>, <&kp O>, <&kp L>, <&kp LPAR>, <&kp SQT>, <&kp SQT>, <&kp RPAR>, <&kp RPAR>, <&kp RPAR>;
+                = <&kp SQT>, <&kp RPAR>, <&kp DOT>, <&kp A>, <&kp G>, <&kp G>
+                , <&kp LPAR>, <&kp SPACE>, <&kp EQUAL>, <&kp P>, <&kp L>, <&kp DOT>, <&kp C>, <&kp O>, <&kp L>
+                , <&kp LPAR>, <&kp SQT>, <&kp SQT>, <&kp RPAR>, <&kp RPAR>, <&kp RPAR>
+                , <&kp HOME>
+                , <&kp DOT>, <&kp G>, <&kp R>, <&kp O>, <&kp U>, <&kp P>, <&kp UNDER>, <&kp B>, <&kp Y>
+                , <&kp LPAR>, <&kp SQT>;
         };
+
 
         pl_over: pl_over {
             compatible = "zmk,behavior-macro";
