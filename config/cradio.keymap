@@ -153,7 +153,8 @@
                 , <&kp LPAR>, <&kp SQT>, <&kp SQT>, <&kp RPAR>, <&kp RPAR>, <&kp RPAR>
                 , <&kp HOME>
                 , <&kp DOT>, <&kp G>, <&kp R>, <&kp O>, <&kp U>, <&kp P>, <&kp UNDER>, <&kp B>, <&kp Y>
-                , <&kp LPAR>, <&kp SQT>;
+                , <&kp LPAR>
+                , <&kp SQT>;
         };
 
 
