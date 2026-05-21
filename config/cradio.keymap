@@ -74,7 +74,7 @@
             tap-ms = <30>;
             bindings 
                 = <&pl_text>  // 오타 수정 후 정상적으로 앞선 매크로 호출
-                , <&kp LEFT>, <&kp LEFT>, <&kp LEFT>, <&kp LEFT>; 
+                , <&kp LEFT>, <&kp LEFT>, <&kp LEFT>, <&kp LEFT>, <&kp LEFT>; 
         };
 
         pl_filter: pl_filter {
