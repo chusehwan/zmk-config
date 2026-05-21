@@ -65,7 +65,7 @@
                 , <&kp LPAR>, <&kp SPACE>, <&kp EQUAL>, <&kp LPAR>, <&kp P>, <&kp L>, <&kp DOT>, <&kp C>, <&kp O>, <&kp L>
                 , <&kp LPAR>, <&kp SQT>, <&kp SQT>, <&kp RPAR>, <&kp RPAR>, <&kp RPAR>
                 , <&macro_wait_time 30>
-                , <&kp LEFT>, <&kp LEFT>, <&kp LEFT>;
+                , <&kp LEFT>, <&kp LEFT>, <&kp LEFT>, <&kp LEFT>;
         };
 
 
