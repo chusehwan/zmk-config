@@ -392,6 +392,15 @@
             bindings = <&kp V>, <&kp LC(V)>;
         };
 
+        // 전체선택 (b 한 번: b, 두 번: Ctrl+A)
+        td_select: tap_dance_select {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TAP_DANCE_SELECT";
+            #binding-cells = <0>;
+            tapping-term-ms = <200>;
+            bindings = <&kp B>, <&kp LC(A)>;
+        };
+
     }; 
     keymap {
         compatible = "zmk,keymap";
@@ -405,7 +414,7 @@
             &ht LCTRL A &ht LSHFT S &ht LALT D &lt 4 F &ht LGUI G     &ht CAPS H  &lt 5 J &ht LALT K &ht RSHFT L &ht LCTRL SQT
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
-            &kp Z      &td_cut    &td_copy   &td_paste   &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
+            &kp Z      &td_cut    &td_copy   &td_paste  &td_select     &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                         &to_mo 3 2    &layer_tab 1 TAB  &lt 3 SPACE  &layer_tab 6 RALT
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
