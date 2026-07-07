@@ -416,7 +416,7 @@
         //│  Z       │  X       │  C       │  V       │  B       │   │  N       │  M       │ , <      │ . >      │ / ?      │
             &kp Z      &td_cut    &td_copy   &td_paste  &td_select     &kp N      &kp M      &kp COMMA  &kp DOT    &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                        &to_mo 3 TAB    &to_mo 1 2  &lt 3 SPACE  &layer_tab 6 RALT
+                                        &layer_tab 3 TAB    &to_mo 1 2  &lt 3 SPACE  &layer_tab 6 RALT
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
             >;
         };                 
@@ -505,4 +505,4 @@
             >;
         };
     };
-};
+};il
