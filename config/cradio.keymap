@@ -440,13 +440,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
-        &kp C_MUTE      &trans     &trans     &trans     &trans       &kp LC(W) &kp LC(PG_UP) &mmv MOVE_UP &kp LC(PG_DN) &kp F11
+              &trans &kp C_VOL_DN   &kp C_MUTE  &kp C_VOL_UP  &trans       &kp LC(W) &kp LC(PG_UP) &mmv MOVE_UP &kp LC(PG_DN) &kp F11
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-        &kp C_VOL_UP  &trans  &msc SCRL_LEFT &msc SCRL_RIGHT &trans &kp LEFT  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp RIGHT 
+              &trans   &trans  &msc SCRL_LEFT &msc SCRL_RIGHT &trans &kp LEFT  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp RIGHT 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-        &kp C_VOL_DN &kp C_PREV    &kp C_PP &kp C_NEXT   &trans       &kp LA(LEFT) &msc SCRL_UP &msc SCRL_DOWN &kp F &kp LA(RIGHT)  
+            &trans  &kp C_PREV    &kp C_PP &kp C_NEXT   &trans       &kp LA(LEFT) &msc SCRL_UP &msc SCRL_DOWN &kp F &kp LA(RIGHT)  
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                 &to 0  &mkp LCLK       &mkp LCLK  &mkp RCLK
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
