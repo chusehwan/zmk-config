@@ -225,8 +225,6 @@
                 ;
         };
 
-
-        <&kp LS(LG(S))>
     };
     combos {
         compatible = "zmk,combos";
