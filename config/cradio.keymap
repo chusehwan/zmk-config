@@ -61,7 +61,7 @@
             wait-ms = <15>;
             tap-ms = <15>;
             bindings 
-           
+        
                 = <&kp EQUAL>, <&kp LPAR>, <&kp P>, <&kp L>, <&kp DOT>, <&kp C>, <&kp O>, <&kp L>
                 , <&kp LPAR>, <&kp SQT>, <&kp SQT>, <&kp RPAR>, <&kp RPAR>, <&kp RPAR>
                 , <&kp HOME>
@@ -224,7 +224,7 @@
                 , <&macro_release &kp LGUI>
                 ;
         };
-
+    
     };
     combos {
         compatible = "zmk,combos";
@@ -249,7 +249,7 @@
             bindings = <&kp C_VOL_DN>;
         };
 
-           // , + . = volup 
+        // , + . = volup 
         combo_volup {
             timeout-ms = <30>;  
             key-positions = <27 28>;
@@ -452,10 +452,10 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │          │          │          │          │
-              &trans &kp C_VOL_DN   &kp C_MUTE  &kp C_VOL_UP  &trans       &kp LC(W) &kp LC(PG_UP) &mmv MOVE_UP &kp LC(PG_DN) &kp F11
+            &kp LS(LG(S)) &kp C_VOL_DN   &kp C_MUTE  &kp C_VOL_UP  &trans       &kp LC(W) &kp LC(PG_UP) &mmv MOVE_UP &kp LC(PG_DN) &kp F11
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-           &kp LS(LG(S))   &win_tab  &msc SCRL_LEFT &msc SCRL_RIGHT &trans &kp LEFT  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp RIGHT 
+           &trans     &trans  &msc SCRL_LEFT &msc SCRL_RIGHT &win_tab &kp LEFT  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp RIGHT 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &trans  &kp C_PREV    &kp C_PP &kp C_NEXT   &trans       &kp LA(LEFT) &msc SCRL_UP &msc SCRL_DOWN &kp F &kp LA(RIGHT)  
@@ -469,13 +469,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │          │    7     │    8     │    9     │          │
-           &kp C_MUTE   &kp F7     &kp F8     &kp F9    &kp F11       &kp MINUS    &kp N7     &kp N8     &kp N9     &kp PLUS 
+        &kp C_MUTE   &kp F7     &kp F8     &kp F9    &kp F11       &kp MINUS    &kp N7     &kp N8     &kp N9     &kp PLUS 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │    4     │    5     │    6     │    0     │
         &ht LCTRL C_VOL_UP &ht LSHFT F4 &ht LALT F5 &kp F6 &kp F10     &trans    &kp N4   &ht LALT N5 &ht RSHFT N6 &ht LCTRL N0
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │    1     │    2     │    3     │          │
-          &kp C_VOL_DN  &kp F1     &kp F2     &kp F3    &kp F12        &kp ASTRK    &kp N1     &kp N2     &kp N3     &kp FSLH
+        &kp C_VOL_DN  &kp F1     &kp F2     &kp F3    &kp F12        &kp ASTRK    &kp N1     &kp N2     &kp N3     &kp FSLH
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                 &trans     &trans         &trans     &trans
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
