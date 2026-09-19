@@ -128,8 +128,7 @@
             #binding-cells = <0>;
             wait-ms = <7>;
             tap-ms = <7>;
-            bindings = <&kp DOT &kp H &kp E &kp A &kp D &kp LPAR &kp RPAR>,
-                    <&kp LEFT>;
+            bindings = <&kp DOT &kp H &kp E &kp A &kp D &kp LPAR &kp RPAR>;
         };
 
         pl_set_rows: pl_set_rows {
@@ -213,6 +212,21 @@
             bindings 
                 = <&kp D &kp K &kp S &kp S &kp U &kp D &kp G &kp K &kp T &kp P &kp D &kp Y> ;
         };
+
+        win_tab: win_tab {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            wait-ms = <7>;
+            tap-ms = <7>;
+            bindings 
+                = <&macro_press &kp LGUI>
+                , <&macro_tap &kp TAB>
+                , <&macro_release &kp LGUI>
+                ;
+        };
+
+
+        <&kp LS(LG(S))>
     };
     combos {
         compatible = "zmk,combos";
@@ -443,7 +457,7 @@
               &trans &kp C_VOL_DN   &kp C_MUTE  &kp C_VOL_UP  &trans       &kp LC(W) &kp LC(PG_UP) &mmv MOVE_UP &kp LC(PG_DN) &kp F11
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-              &trans   &trans  &msc SCRL_LEFT &msc SCRL_RIGHT &trans &kp LEFT  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp RIGHT 
+           &kp LS(LG(S))   &win_tab  &msc SCRL_LEFT &msc SCRL_RIGHT &trans &kp LEFT  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp RIGHT 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &trans  &kp C_PREV    &kp C_PP &kp C_NEXT   &trans       &kp LA(LEFT) &msc SCRL_UP &msc SCRL_DOWN &kp F &kp LA(RIGHT)  
