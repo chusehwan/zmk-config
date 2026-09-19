@@ -445,13 +445,13 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
         //│          │          │          │          │          │   │ DELETE   │          │   UP     │          │ INSERT   │
-            &trans      &trans   &msc SCRL_UP &trans       &trans      &kp DEL    &kp PG_UP    &kp UP  &kp PG_DN    &kp INS 
+            &trans      &trans   &trans      &trans       &trans      &kp DEL    &kp PG_UP    &kp UP  &kp PG_DN    &kp INS 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │ LEFT     │ DOWN     │ RIGHT    │          │
             &trans   &trans  &msc SCRL_LEFT &msc SCRL_RIGHT &trans     &kp HOME  &kp LEFT  &kp DOWN   &kp RIGHT   &kp END 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-            &trans     &trans   &msc SCRL_DOWN &trans    &trans         &trans  &msc SCRL_UP &msc SCRL_DOWN &trans &trans
+            &trans     &trans   &kp LC(LS(LBKT)) &kp LC(LS(RBKT)) &kp LA(W) &trans  &msc SCRL_UP &msc SCRL_DOWN &trans &trans
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                 &trans     &trans         &mkp LCLK  &mkp RCLK
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
