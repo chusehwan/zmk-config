@@ -535,7 +535,7 @@
         };
 
     speed_fast_layer_7 {
-            bindings = 
+            bindings = <
                 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
                 &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
