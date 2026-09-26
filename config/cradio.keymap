@@ -7,6 +7,7 @@
     #include <dt-bindings/zmk/pointing.h>
     #define ZMK_POINTING_DEFAULT_MOVE_VAL 1800  // default: 600
     #define ZMK_POINTING_DEFAULT_SCRL_VAL 80    // default: 10
+    #include <input/processors.dtsi>
     
     &mmv {
             acceleration-exponent = <1>;
@@ -29,7 +30,14 @@
     //                                 │      30  │      31  │   │      32  │      33  │
     //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
 
-
+    &mmv_input_listener {
+        input-processors = <&zip_xy_scaler 1 1>;   // 기본 속도
+    
+        fast_override {
+            layers = <7>;
+            input-processors = <&zip_xy_scaler 3 1>;  // F 홀드 시 3배 가속
+        };
+    };
 
     / {
     macros {
@@ -464,7 +472,7 @@
            &kp LS(LG(S)) &trans  &msc SCRL_LEFT &msc SCRL_RIGHT &kp LA(TAB) &kp LC(W) &kp LC(PG_UP) &mmv MOVE_UP &kp LC(PG_DN) &kp F11
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
-           &trans     &trans  &kp LC(LG(LEFT)) &kp LC(LG(RIGHT)) &win_tab &kp LEFT  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp RIGHT 
+           &trans  &trans  &kp LC(LG(LEFT)) &layer_tab 7 LC(LG(RIGHT))  &win_tab &kp LEFT  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp RIGHT 
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │          │          │          │          │
             &kp C_VOL_DN  &kp C_PREV    &kp C_PP &kp C_NEXT   &kp C_VOL_UP       &kp LA(LEFT) &msc SCRL_UP &msc SCRL_DOWN &kp F &kp LA(RIGHT)  
@@ -523,6 +531,15 @@
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                                 &trans     &trans        &trans     &trans 
         //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
+            >;
+        };
+
+    speed_fast_layer_7 {
+            bindings = 
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
+                                    &trans &trans   &trans &trans
             >;
         };
     };
