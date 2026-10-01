@@ -278,7 +278,7 @@ macros {
             ;
     };
 
-    // Enter로 선택 확정 -> Alt 해제 -> 레이어 9 종료
+    // Enter로 선택 확정 -> Alt 해제 -> 레이어 9 종료 -> 마우스 레이어(L2)로 복귀
     alt_enter: alt_enter {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
@@ -288,10 +288,11 @@ macros {
             = <&macro_tap &kp ENTER>
             , <&macro_release &kp LALT>
             , <&macro_tap &tog 9>
+            , <&macro_tap &to 2>
             ;
     };
 
-    // Esc로 전환기 닫기 -> Alt 해제 -> 레이어 9 종료 (창 전환 없음)
+    // Esc로 전환기 닫기 -> Alt 해제 -> 레이어 9 종료 -> 마우스 레이어(L2)로 복귀 (창 전환 없음)
     alt_cancel: alt_cancel {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
@@ -301,6 +302,7 @@ macros {
             = <&macro_tap &kp ESC>
             , <&macro_release &kp LALT>
             , <&macro_tap &tog 9>
+            , <&macro_tap &to 2>
             ;
     };
 
