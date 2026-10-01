@@ -112,15 +112,11 @@ macros {
         #binding-cells = <0>;
         wait-ms = <7>;
         tap-ms = <7>;
-        // pl.when(|).then().otherwise(None)
+        // pl.when().then().otherwise(None)|  (커서는 맨 끝)
         bindings
             = <&kp P &kp L &kp DOT &kp W &kp H &kp E &kp N &kp LPAR &kp RPAR>
             , <&kp DOT &kp T &kp H &kp E &kp N &kp LPAR &kp RPAR>
             , <&kp DOT &kp O &kp T &kp H &kp E &kp R &kp W &kp I &kp S &kp E &kp LPAR &kp LS(N) &kp O &kp N &kp E &kp RPAR>
-            // 커서를 when( 안쪽으로 이동 (24칸). 끝에 두려면 아래 줄을 지우세요
-            , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>
-            , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>
-            , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>
             ;
     };
 
