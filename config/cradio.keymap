@@ -264,7 +264,7 @@ macros {
             ;
     };
 
-    // ===== 추가 2: Alt 유지형 Alt+Tab =====
+    // ===== 추가 2: Alt 유지형 Alt+Tab (기본 레이어 L0 위에 레이어 9를 얹는 방식) =====
     alt_tab_start: alt_tab_start {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
@@ -273,40 +273,12 @@ macros {
         bindings
             = <&macro_press &kp LALT>
             , <&macro_tap &kp TAB>
+            , <&macro_tap &to 0>
             , <&macro_tap &tog 9>
             ;
     };
 
-    alt_click_l: alt_click_l {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        wait-ms = <10>;
-        tap-ms = <10>;
-        bindings
-            = <&macro_press &mkp LCLK>
-            , <&macro_pause_for_release>
-            , <&macro_release &mkp LCLK>
-            , <&macro_wait_time 40>
-            , <&macro_release &kp LALT>
-            , <&macro_tap &tog 9>
-            ;
-    };
-
-    alt_click_r: alt_click_r {
-        compatible = "zmk,behavior-macro";
-        #binding-cells = <0>;
-        wait-ms = <10>;
-        tap-ms = <10>;
-        bindings
-            = <&macro_press &mkp RCLK>
-            , <&macro_pause_for_release>
-            , <&macro_release &mkp RCLK>
-            , <&macro_wait_time 40>
-            , <&macro_release &kp LALT>
-            , <&macro_tap &tog 9>
-            ;
-    };
-
+    // Enter로 선택 확정 -> Alt 해제 -> 레이어 9 종료
     alt_enter: alt_enter {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
@@ -319,14 +291,16 @@ macros {
             ;
     };
 
+    // Esc로 전환기 닫기 -> Alt 해제 -> 레이어 9 종료 (창 전환 없음)
     alt_cancel: alt_cancel {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         wait-ms = <10>;
         tap-ms = <10>;
         bindings
-            = <&macro_release &kp LALT>
-            , <&macro_tap &to 0>
+            = <&macro_tap &kp ESC>
+            , <&macro_release &kp LALT>
+            , <&macro_tap &tog 9>
             ;
     };
 
@@ -345,6 +319,7 @@ combos {
         // m + , = home
     combo_home {
         timeout-ms = <30>;
+        layers = <0 1 2 3 4 5 6 7 8>;
         key-positions = <26 27>;
         bindings = <&kp HOME>;
     };
@@ -352,6 +327,7 @@ combos {
         // n + m = voldn
     combo_voldn {
         timeout-ms = <30>;
+        layers = <0 1 2 3 4 5 6 7 8>;
         key-positions = <25 26>;
         bindings = <&kp C_VOL_DN>;
     };
@@ -359,6 +335,7 @@ combos {
     // , + . = volup
     combo_volup {
         timeout-ms = <30>;
+        layers = <0 1 2 3 4 5 6 7 8>;
         key-positions = <27 28>;
         bindings = <&kp C_VOL_UP>;
     };
@@ -382,6 +359,7 @@ combos {
         // w + e = esc
     combo_esc {
         timeout-ms = <30>;
+        layers = <0 1 2 3 4 5 6 7 8>;
         key-positions = <1 2>;
         bindings = <&kp ESC>;
     };
@@ -390,6 +368,7 @@ combos {
         // d + ' = colon
     combo_COLON {
         timeout-ms = <30>;
+        layers = <0 1 2 3 4 5 6 7 8>;
         key-positions = <18 19>;
         bindings = <&kp COLON>;
     };
@@ -398,6 +377,7 @@ combos {
         // d + : = semicolon
     combo_SEMI {
         timeout-ms = <30>;
+        layers = <0 1 2 3 4 5 6 7 8>;
         key-positions = <28 29>;
         bindings = <&kp SEMI>;
     };
@@ -406,6 +386,7 @@ combos {
         // e + r =screen shot
     combo_screenshot {
         timeout-ms = <30>;
+        layers = <0 1 2 3 4 5 6 7 8>;
         key-positions = <2 3>;
         bindings = <&kp LS(LG(S))>;
     };
@@ -615,13 +596,13 @@ keymap {
         >;
     };
 
-    // Alt+Tab 유지 중(토글): 클릭/Enter 시 Alt 해제
+    // Alt+Tab 유지 중(L0 위에 토글): 방향키 선택, Enter 확정, 나머지 키는 모두 차단(&none)
     alt_tab_layer_9 {
         bindings = <
-            &trans &trans &trans &trans &kp TAB   &trans &trans &trans &trans &trans
-            &trans &trans &trans &trans &alt_enter   &trans &trans &trans &trans &trans
-            &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans
-                                &alt_cancel &alt_click_l   &alt_click_l &alt_click_r
+            &none &none &none &none &none   &none &none &kp UP &none &none
+            &none &none &none &none &none   &none &kp LEFT &kp DOWN &kp RIGHT &none
+            &none &none &none &none &none   &none &none &none &none &none
+                                &alt_cancel &none   &alt_enter &none
         >;
     };
 };
