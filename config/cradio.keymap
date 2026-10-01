@@ -107,16 +107,21 @@ macros {
         bindings = <&kp DOT &kp U &kp N &kp I &kp Q &kp U &kp E &kp LPAR &kp RPAR>;
     };
 
-    pl_exclude: pl_exclude {
+    pl_when: pl_when {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
         wait-ms = <7>;
         tap-ms = <7>;
-        bindings = <&kp DOT &kp S &kp E &kp L &kp E &kp C &kp T &kp LPAR>
-            , <&kp P &kp L &kp DOT &kp A &kp L &kp L &kp LPAR &kp RPAR &kp DOT>
-            , <&kp E &kp X &kp C &kp L &kp U &kp D &kp E &kp LPAR>
-            , <&kp SQT &kp SQT &kp RPAR &kp RPAR>
-            , <&kp LEFT &kp LEFT &kp LEFT>;
+        // pl.when(|).then().otherwise(None)
+        bindings
+            = <&kp P &kp L &kp DOT &kp W &kp H &kp E &kp N &kp LPAR &kp RPAR>
+            , <&kp DOT &kp T &kp H &kp E &kp N &kp LPAR &kp RPAR>
+            , <&kp DOT &kp O &kp T &kp H &kp E &kp R &kp W &kp I &kp S &kp E &kp LPAR &kp LS(N) &kp O &kp N &kp E &kp RPAR>
+            // 커서를 when( 안쪽으로 이동 (24칸). 끝에 두려면 아래 줄을 지우세요
+            , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>
+            , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>
+            , <&kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT &kp LEFT>
+            ;
     };
 
     pl_not_null: pl_not_null {
@@ -137,7 +142,11 @@ macros {
         #binding-cells = <0>;
         wait-ms = <7>;
         tap-ms = <7>;
-        bindings = <&kp DOT &kp C &kp O &kp L &kp L &kp E &kp C &kp T &kp LPAR &kp RPAR>;
+        // .collect(engine='streaming')
+        bindings
+            = <&kp DOT &kp C &kp O &kp L &kp L &kp E &kp C &kp T &kp LPAR>
+            , <&kp E &kp N &kp G &kp I &kp N &kp E &kp EQUAL &kp SQT &kp S &kp T &kp R &kp E &kp A &kp M &kp I &kp N &kp G &kp SQT &kp RPAR>
+            ;
     };
 
     pl_head: pl_head {
@@ -276,7 +285,9 @@ macros {
         bindings
             = <&macro_press &mkp LCLK>
             , <&macro_pause_for_release>
-            , <&macro_release &mkp LCLK &kp LALT>
+            , <&macro_release &mkp LCLK>
+            , <&macro_wait_time 40>
+            , <&macro_release &kp LALT>
             , <&macro_tap &tog 9>
             ;
     };
@@ -289,7 +300,9 @@ macros {
         bindings
             = <&macro_press &mkp RCLK>
             , <&macro_pause_for_release>
-            , <&macro_release &mkp RCLK &kp LALT>
+            , <&macro_release &mkp RCLK>
+            , <&macro_wait_time 40>
+            , <&macro_release &kp LALT>
             , <&macro_tap &tog 9>
             ;
     };
@@ -328,13 +341,6 @@ combos {
         bindings = <&kp ENTER>;     // 실행할 키
     };
 
-    // k + l = Enter 후 Alt 해제 (Alt+Tab 레이어 9 전용)
-    combo_enter_alt {
-        timeout-ms = <30>;
-        key-positions = <17 18>;
-        layers = <9>;
-        bindings = <&alt_enter>;
-    };
 
         // m + , = home
     combo_home {
@@ -360,6 +366,7 @@ combos {
         // j + k = BACKSPACE
     combo_backspace {
         timeout-ms = <30>;
+        layers = <0 1 2 3 4 5 6 7 8>;
         key-positions = <16 17>;
         bindings = <&kp BSPC>;
     };
@@ -367,6 +374,7 @@ combos {
         // h + j = cntrl + BACKSPACE
     combo_backspace_ctrl {
         timeout-ms = <30>;
+        layers = <0 1 2 3 4 5 6 7 8>;
         key-positions = <16 17 18>;
         bindings = <&kp LC(BSPC)>;
     };
@@ -402,40 +410,10 @@ combos {
         bindings = <&kp LS(LG(S))>;
     };
 
-        // left shift + ㅂ = ㅃ
-    combo_shiftq {
-        timeout-ms = <30>;
-        key-positions = <18 0>;
-        bindings = <&kp LS(Q)>;
-    };
 
-        // left shift + ㅈ = ㅉ
-    combo_shiftw {
-        timeout-ms = <30>;
-        key-positions = <18 1>;
-        bindings = <&kp LS(W)>;
-    };
 
-        // left shift + ㄷ = ㄸ
-    combo_shifte {
-        timeout-ms = <30>;
-        key-positions = <18 2>;
-        bindings = <&kp LS(E)>;
-    };
 
-        // left shift + ㄱ = ㄲ
-    combo_shiftr {
-        timeout-ms = <30>;
-        key-positions = <18 3>;
-        bindings = <&kp LS(R)>;
-    };
 
-        // left shift + ㅅ = ㅆ
-    combo_shiftt {
-        timeout-ms = <30>;
-        key-positions = <18 4>;
-        bindings = <&kp LS(T)>;
-    };
 
     // ㅅ + ㅋ = 좌리셋
     combo_lreset {
@@ -594,7 +572,7 @@ keymap {
 
     macro_layer_5 {
         bindings = <
-        &pl_unique &pl_with &pl_exclude &pl_set_rows &pl_head   &trans &trans &trans &trans &trans
+        &pl_unique &pl_with &pl_when &pl_set_rows &pl_head   &trans &trans &trans &trans &trans
         &pl_sort &pl_select &pl_col &pl_filter &pl_group   &trans &trans &parant &bracket &brace
         &kr_hello &pl_not_null &pl_collect &pl_over &kr_thanks   &trans &trans &trans &trans &trans
         &trans &trans &trans &trans
@@ -641,7 +619,7 @@ keymap {
     alt_tab_layer_9 {
         bindings = <
             &trans &trans &trans &trans &kp TAB   &trans &trans &trans &trans &trans
-            &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &alt_enter   &trans &trans &trans &trans &trans
             &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans
                                 &alt_cancel &alt_click_l   &alt_click_l &alt_click_r
         >;
