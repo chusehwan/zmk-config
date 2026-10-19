@@ -35,12 +35,12 @@
 
     slow_override {
         layers = <7>;
-        input-processors = <&zip_xy_scaler 1 2>;  // 7번 레이어: 절반 속도
+        input-processors = <&zip_xy_scaler 1 2>;  // 7번 레이어(F 홀드): 절반 속도
     };
 
     fast_override {
-        layers = <8>;
-        input-processors = <&zip_xy_scaler 5 1>;  // 8번 레이어: 2배 속도
+        layers = <10>;                             // [수정] 8 -> 10
+        input-processors = <&zip_xy_scaler 5 1>;  // 10번 레이어(D 홀드): 5배 속도
     };
 };
 
@@ -252,7 +252,7 @@ macros {
             ;
     };
 
-    // ===== 추가 1: 마우스 레이어에서 좌클릭(31번) 홀드 중 레이어 8 활성화 =====
+    // ===== 마우스 레이어에서 좌클릭(31번) 홀드 중 레이어 8(click_hold_layer_8) 활성화 =====
     lclk_layer: lclk_layer {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
@@ -265,7 +265,7 @@ macros {
             ;
     };
 
-    // ===== 추가 2: Alt 유지형 Alt+Tab (기본 레이어 L0 위에 레이어 9를 얹는 방식) =====
+    // ===== Alt 유지형 Alt+Tab (기본 레이어 L0 위에 레이어 9를 얹는 방식) =====
     alt_tab_start: alt_tab_start {
         compatible = "zmk,behavior-macro";
         #binding-cells = <0>;
@@ -312,33 +312,32 @@ combos {
     compatible = "zmk,combos";
     // k + l = ENTER (레이어 9 제외)
     combo_enter {
-        timeout-ms = <30>;          // 동시에 눌러야 하는 제한 시간 (ms)
-        key-positions = <17 18>;   // K와 L의 물리적 위치 번호
-        layers = <0 1 2 3 4 5 6 7 8>;
-        bindings = <&kp ENTER>;     // 실행할 키
+        timeout-ms = <30>;
+        key-positions = <17 18>;
+        layers = <0 1 2 3 4 5 6 7 8 10>;   // [수정] 10 추가
+        bindings = <&kp ENTER>;
     };
 
     // d + f = CAPS LOCK (누를 때마다 on/off 토글)
     combo_capslock {
         timeout-ms = <30>;
         key-positions = <12 13>;   // D(12), F(13)
-        layers = <0>;              // 기본 레이어에서만 (마우스 레이어의 D/F 키와 충돌 방지)
+        layers = <0>;              // 기본 레이어에서만
         bindings = <&kp CAPS>;
     };
 
-
-        // m + , = home
+    // m + , = home
     combo_home {
         timeout-ms = <30>;
-        layers = <0 1 2 3 4 5 6 7 8>;
+        layers = <0 1 2 3 4 5 6 7 8 10>;   // [수정]
         key-positions = <26 27>;
         bindings = <&kp HOME>;
     };
 
-        // n + m = voldn
+    // n + m = voldn
     combo_voldn {
         timeout-ms = <30>;
-        layers = <0 1 2 3 4 5 6 7 8>;
+        layers = <0 1 2 3 4 5 6 7 8 10>;   // [수정]
         key-positions = <25 26>;
         bindings = <&kp C_VOL_DN>;
     };
@@ -346,66 +345,58 @@ combos {
     // , + . = volup
     combo_volup {
         timeout-ms = <30>;
-        layers = <0 1 2 3 4 5 6 7 8>;
+        layers = <0 1 2 3 4 5 6 7 8 10>;   // [수정]
         key-positions = <27 28>;
         bindings = <&kp C_VOL_UP>;
     };
 
-        // j + k = BACKSPACE
+    // j + k = BACKSPACE
     combo_backspace {
         timeout-ms = <30>;
-        layers = <0 1 2 3 4 5 6 7 8>;
+        layers = <0 1 2 3 4 5 6 7 8 10>;   // [수정]
         key-positions = <16 17>;
         bindings = <&kp BSPC>;
     };
 
-        // h + j = cntrl + BACKSPACE
+    // h + j = cntrl + BACKSPACE
     combo_backspace_ctrl {
         timeout-ms = <30>;
-        layers = <0 1 2 3 4 5 6 7 8>;
+        layers = <0 1 2 3 4 5 6 7 8 10>;   // [수정]
         key-positions = <16 17 18>;
         bindings = <&kp LC(BSPC)>;
     };
 
-        // w + e = esc
+    // w + e = esc
     combo_esc {
         timeout-ms = <30>;
-        layers = <0 1 2 3 4 5 6 7 8>;
+        layers = <0 1 2 3 4 5 6 7 8 10>;   // [수정]
         key-positions = <1 2>;
         bindings = <&kp ESC>;
     };
 
-
-        // d + ' = colon
+    // d + ' = colon
     combo_COLON {
         timeout-ms = <30>;
-        layers = <0 1 2 3 4 5 6 7 8>;
+        layers = <0 1 2 3 4 5 6 7 8 10>;   // [수정]
         key-positions = <18 19>;
         bindings = <&kp COLON>;
     };
 
-
-        // d + : = semicolon
+    // d + : = semicolon
     combo_SEMI {
         timeout-ms = <30>;
-        layers = <0 1 2 3 4 5 6 7 8>;
+        layers = <0 1 2 3 4 5 6 7 8 10>;   // [수정]
         key-positions = <28 29>;
         bindings = <&kp SEMI>;
     };
 
-
-        // e + r =screen shot
+    // e + r = screen shot
     combo_screenshot {
         timeout-ms = <30>;
-        layers = <0 1 2 3 4 5 6 7 8>;
+        layers = <0 1 2 3 4 5 6 7 8 10>;   // [수정]
         key-positions = <2 3>;
         bindings = <&kp LS(LG(S))>;
     };
-
-
-
-
-
 
     // ㅅ + ㅋ = 좌리셋
     combo_lreset {
@@ -437,16 +428,16 @@ behaviors {
         #binding-cells = <2>;
         flavor = "tap-preferred";
         tapping-term-ms = <200>;
-        // 홀드 시 첫 번째 인자(&mo), 탭 시 두 번째 인자(&to) 실행
+        // 홀드 시 첫 번째 인자(&mo), 탭 시 두 번째 인자(&kp) 실행
         bindings = <&mo>, <&kp>;
     };
 
     to_mo: to_mo {
         compatible = "zmk,behavior-hold-tap";
         #binding-cells = <2>;
-        flavor = "tap-preferred";    // 짧게 누르기 반응성을 높임
+        flavor = "tap-preferred";
         tapping-term-ms = <200>;
-        bindings = <&mo>, <&to>;     // 순서: [Hold 시 동작], [Tap 시 동작]
+        bindings = <&mo>, <&to>;     // [Hold 시 동작], [Tap 시 동작]
     };
 
     td_cut: tap_dance_cut {
@@ -484,7 +475,7 @@ behaviors {
         bindings = <&kp B>, <&kp LC(A)>;
     };
 
-    // ===== 마우스 레이어 전용: 1탭 = 기존 미디어키, 2탭 = 잘라내기/복사/붙여넣기/전체선택 =====
+    // ===== 마우스 레이어 전용: 1탭 = 미디어키, 2탭 = 잘라내기/복사/붙여넣기/전체선택 =====
     td_m_x: tap_dance_m_x {
         compatible = "zmk,behavior-tap-dance";
         label = "TAP_DANCE_M_X";
@@ -520,6 +511,8 @@ behaviors {
 };
 keymap {
     compatible = "zmk,keymap";
+
+    // ---- 레이어 0 ----
     default_layer_0 {
         bindings = <
     //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -536,22 +529,18 @@ keymap {
     //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
         >;
     };
+
+    // ---- 레이어 1 ----
     direction_layer_1 {
         bindings = <
-    //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-    //│          │          │          │          │          │   │ DELETE   │          │   UP     │          │ INSERT   │
         &trans      &trans   &trans      &trans       &trans      &kp DEL    &kp PG_UP    &kp UP  &kp PG_DN    &kp INS
-    //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    //│          │          │          │          │          │   │          │ LEFT     │ DOWN     │ RIGHT    │          │
         &trans   &trans  &msc SCRL_LEFT &msc SCRL_RIGHT &trans     &kp HOME  &kp LEFT  &kp DOWN   &kp RIGHT   &kp END
-    //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    //│          │          │          │          │          │   │          │          │          │          │          │
         &trans     &trans      &trans     &trans     &trans         &trans  &msc SCRL_UP &msc SCRL_DOWN &trans &trans
-    //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &trans     &trans         &mkp LCLK  &mkp RCLK
-    //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
         >;
     };
+
+    // ---- 레이어 2 (마우스) ----
     mouse_layer_2 {
         bindings = <
     //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
@@ -559,7 +548,7 @@ keymap {
        &kp LS(LG(S)) &trans  &msc SCRL_LEFT &msc SCRL_RIGHT &alt_tab_start &kp LC(W) &kp LC(PG_UP) &mmv MOVE_UP &kp LC(PG_DN) &kp F11
     //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
     //│          │          │          │          │          │   │          │          │          │          │          │
-       &trans  &trans  &layer_tab 8 LC(LG(LEFT)) &layer_tab 7 LC(LG(RIGHT))  &win_tab &kp LEFT  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp RIGHT
+       &trans  &trans  &layer_tab 10 LC(LG(LEFT)) &layer_tab 7 LC(LG(RIGHT))  &win_tab &kp LEFT  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp RIGHT
     //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
     //│          │          │          │          │          │   │          │          │          │          │          │
         &kp C_VOL_DN  &td_m_x    &td_m_c  &td_m_v   &td_m_b       &kp LA(LEFT) &msc SCRL_UP &msc SCRL_DOWN &kp F &kp LA(RIGHT)
@@ -569,23 +558,17 @@ keymap {
         >;
     };
 
+    // ---- 레이어 3 ----
     number_layer_3 {
         bindings = <
-    //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-    //│          │          │          │          │          │   │          │    7     │    8     │    9     │          │
     &kp C_MUTE   &kp F7     &kp F8     &kp F9    &kp F11       &kp MINUS    &kp N7     &kp N8     &kp N9     &kp PLUS
-    //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    //│          │          │          │          │          │   │          │    4     │    5     │    6     │    0     │
     &ht LCTRL C_VOL_UP &ht LSHFT F4 &ht LALT F5 &kp F6 &kp F10     &trans    &kp N4   &ht LALT N5 &ht RSHFT N6 &ht LCTRL N0
-    //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    //│          │          │          │          │          │   │          │    1     │    2     │    3     │          │
     &kp C_VOL_DN  &kp F1     &kp F2     &kp F3    &kp F12        &kp ASTRK    &kp N1     &kp N2     &kp N3     &kp FSLH
-    //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &trans     &trans         &trans     &trans
-    //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
         >;
     };
 
+    // ---- 레이어 4 ----
     special_layer_4 {
         bindings = <
         &kp GRAVE &trans &trans &trans &trans   &kp TILDE &kp EXCL &kp AT &kp HASH &kp PLUS
@@ -595,6 +578,7 @@ keymap {
         >;
     };
 
+    // ---- 레이어 5 ----
     macro_layer_5 {
         bindings = <
         &pl_unique &pl_with &pl_when &pl_set_rows &pl_head   &trans &trans &trans &trans &trans
@@ -604,23 +588,17 @@ keymap {
         >;
     };
 
+    // ---- 레이어 6 ----
     admin_layer_6 {
         bindings = <
-    //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-    //│ RESET    │          │          │          │          │   │          │          │          │          │  RESET   │
         &sys_reset  &trans     &trans     &trans     &trans          &trans     &trans     &trans     &trans    &sys_reset
-    //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    //│BOOTLOADER│          │          │          │          │   │          │PROFILE 0 │PROFILE 1 │PROFILE 2 │BOOTLOADER│
         &bootloader  &trans     &trans     &trans      &trans       &trans &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bootloader
-    //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-    //│          │          │          │          │          │   │          │PROFILE 3 │ PROFILE 4│          │          │
         &trans     &trans     &trans    &bt BT_CLR   &trans         &trans  &bt BT_SEL 3 &bt BT_SEL 4 &trans     &trans
-    //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                             &trans     &trans        &trans     &trans
-    //                                 ╰──────────┴──────────╯   ╰──────────┴──────────╯
         >;
     };
 
+    // ---- 레이어 7: F 홀드 (느린 속도) ----
     speed_fast_layer_7 {
         bindings = <
             &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans
@@ -630,15 +608,7 @@ keymap {
         >;
     };
 
-        speed_up_layer_8 {
-            bindings = <
-                &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans
-                &trans &trans &trans &trans
-            >;
-        };
-    // 좌클릭(31번) 홀드 중: U / O 를 Ctrl+Shift+[ / ] 로 덮어씀
+    // ---- 레이어 8: 좌클릭(31번) 홀드 중 U / O 를 Ctrl+Shift+[ / ] 로 덮어씀 ----
     click_hold_layer_8 {
         bindings = <
             &trans &trans &trans &trans &trans   &trans &kp LC(LS(LBKT)) &trans &kp LC(LS(RBKT)) &trans
@@ -648,13 +618,24 @@ keymap {
         >;
     };
 
-    // Alt+Tab 유지 중(L0 위에 토글): 방향키 선택, Enter 확정, 나머지 키는 모두 차단(&none)
+    // ---- 레이어 9: Alt+Tab 유지 중(L0 위에 토글): 방향키 선택, Enter 확정, 나머지 차단 ----
     alt_tab_layer_9 {
         bindings = <
             &none &none &none &none &none   &none &none &kp UP &none &none
             &none &none &none &none &none   &none &kp LEFT &kp DOWN &kp RIGHT &none
             &none &none &none &none &none   &none &none &none &none &none
                                 &alt_cancel &none   &alt_enter &none
+        >;
+    };
+
+    // ---- 레이어 10: D 홀드 (빠른 속도) ----
+    // [수정] 반드시 맨 마지막에 둘 것 (순서가 곧 레이어 번호)
+    speed_up_layer_10 {
+        bindings = <
+            &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans
+            &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans
+                                &trans &trans   &trans &trans
         >;
     };
 };
