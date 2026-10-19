@@ -40,7 +40,7 @@
 
     fast_override {
         layers = <8>;
-        input-processors = <&zip_xy_scaler 3 1>;  // 8번 레이어: 2배 속도
+        input-processors = <&zip_xy_scaler 5 1>;  // 8번 레이어: 2배 속도
     };
 };
 
