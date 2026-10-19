@@ -33,9 +33,14 @@
 &mmv_input_listener {
     input-processors = <&zip_xy_scaler 1 1>;   // 기본 속도
 
-    fast_override {
+    slow_override {
         layers = <7>;
-        input-processors = <&zip_xy_scaler 1 2>;  // F 홀드 시 반으로 속도 줄이기
+        input-processors = <&zip_xy_scaler 1 2>;  // 7번 레이어: 절반 속도
+    };
+
+    fast_override {
+        layers = <8>;
+        input-processors = <&zip_xy_scaler 3 1>;  // 8번 레이어: 2배 속도
     };
 };
 
@@ -554,7 +559,7 @@ keymap {
        &kp LS(LG(S)) &trans  &msc SCRL_LEFT &msc SCRL_RIGHT &alt_tab_start &kp LC(W) &kp LC(PG_UP) &mmv MOVE_UP &kp LC(PG_DN) &kp F11
     //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
     //│          │          │          │          │          │   │          │          │          │          │          │
-       &trans  &trans  &kp LC(LG(LEFT)) &layer_tab 7 LC(LG(RIGHT))  &win_tab &kp LEFT  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp RIGHT
+       &trans  &trans  &layer_tab 8 LC(LG(LEFT)) &layer_tab 7 LC(LG(RIGHT))  &win_tab &kp LEFT  &mmv MOVE_LEFT &mmv MOVE_DOWN &mmv MOVE_RIGHT &kp RIGHT
     //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
     //│          │          │          │          │          │   │          │          │          │          │          │
         &kp C_VOL_DN  &td_m_x    &td_m_c  &td_m_v   &td_m_b       &kp LA(LEFT) &msc SCRL_UP &msc SCRL_DOWN &kp F &kp LA(RIGHT)
@@ -625,6 +630,14 @@ keymap {
         >;
     };
 
+        speed_up_layer_8 {
+            bindings = <
+                &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans &trans   &trans &trans &trans &trans &trans
+                &trans &trans &trans &trans
+            >;
+        };
     // 좌클릭(31번) 홀드 중: U / O 를 Ctrl+Shift+[ / ] 로 덮어씀
     click_hold_layer_8 {
         bindings = <
